@@ -11,4 +11,7 @@ export default defineConfig({
       devSourcemap: true,
     },
   },
+  devToolbar: {
+    enabled: false,
+  },
 })
