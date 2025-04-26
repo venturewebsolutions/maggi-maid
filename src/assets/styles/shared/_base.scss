@@ -1,0 +1,49 @@
+@use 'sass:color';
+
+@function to-rgb($color) {
+  $red: color.channel($color, 'red', $space: rgb);
+  $green: color.channel($color, 'green', $space: rgb);
+  $blue: color.channel($color, 'blue', $space: rgb);
+  @return $red, $green, $blue;
+}
+
+:root {
+  --font-family-base: 'Poppins', sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-base: 400;
+  --line-height-base: 180%;
+
+  --font-family-headings: 'Libre Caslon Text', serif;
+  --font-weight-headings: 700;
+  --line-height-headings: 140%;
+
+  --colour-text-base: #14281d;
+  --rgb-colour-text-base: #{to-rgb(#14281d)};
+  --colour-primary: #eceee9;
+  --colour-accent: #d1462f;
+  --rgb-colour-accent: #{to-rgb(#d1462f)};
+  --colour-accent-hover: #a73825;
+
+  --spacing-sections: 3rem;
+}
+
+@media only screen and (min-width: 0rem) {
+  html {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-base);
+    line-height: var(--line-height-base);
+    color: var(--colour-text-base);
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--font-family-headings);
+  font-weight: var(--font-weight-headings);
+  line-height: var(--line-height-headings);
+}
