@@ -1,1 +1,246 @@
-This is the Nav component.
+---
+import { Image } from 'astro:assets'
+import { url } from '../utils'
+import Hamburger from './Hamburger.astro'
+import CloseIcon from './CloseIcon.astro'
+import Button from './Button.astro'
+---
+
+<header>
+  <div class="container">
+    <nav>
+      <a href={url('/')} class="logo">
+        <Image
+          src={import('../assets/images/maggi-maid-logo.png')}
+          alt="Maggi Maid logo"
+          widths={[80, 160]}
+          sizes="80px"
+          loading="eager"
+        />
+      </a>
+
+      <ul class="links">
+        <li class="link-item">
+          <a href={url('/home/')} class="link">Home</a>
+        </li>
+        <li class="link-item">
+          <a href={url('/services/')} class="link">Services</a>
+        </li>
+        <li class="link-item">
+          <a href={url('/about/')} class="link">About</a>
+        </li>
+        <li class="link-item">
+          <a href={url('/contact/')} class="link">Contact</a>
+        </li>
+      </ul>
+
+      <button class="hamburger">
+        <Hamburger />
+      </button>
+
+      <Button is:link variant="secondary" href="tel:+447312189652" class="cta">
+        Call 07312 189 652
+      </Button>
+
+      <div class="mobile-menu">
+        <div class="mobile-menu-header">
+          <div class="container">
+            <a href={url('/')} class="logo">
+              <Image
+                src={import('../assets/images/maggi-maid-logo.png')}
+                alt="Maggi Maid logo"
+                widths={[80, 160]}
+                sizes="80px"
+                loading="eager"
+              />
+            </a>
+
+            <button class="mobile-close">
+              <CloseIcon />
+            </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <ul class="mobile-links">
+            <li class="mobile-link-item">
+              <a href={url('/services/')} class="mobile-link">Services</a>
+            </li>
+            <li class="mobile-link-item">
+              <a href={url('/about/')} class="mobile-link">About</a>
+            </li>
+            <li class="mobile-link-item">
+              <a href={url('/contact/')} class="mobile-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style lang="scss">
+  header {
+    background-color: var(--colour-primary);
+    padding-block: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  nav {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 4px 30px 0px rgba(var(--rgb-colour-text-base), 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: block;
+    width: 80px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .hamburger {
+    width: 30px;
+    cursor: pointer;
+    color: rgba(var(--rgb-colour-text-base), 0.75);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background-color: var(--colour-primary);
+    transition:
+      visibility 400ms step-start,
+      opacity 400ms cubic-bezier(0, -0.01, 0.19, 0.99);
+
+    &:not(.show) {
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        visibility 400ms step-end,
+        opacity 400ms cubic-bezier(0, -0.01, 0.19, 0.99);
+    }
+  }
+
+  .mobile-menu-header {
+    position: relative;
+    padding-block: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(var(--rgb-colour-text-base), 0.2),
+        rgba(var(--rgb-colour-text-base), 0.2) 50%,
+        transparent 0,
+        transparent
+      );
+      background-size: 8px 1px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .mobile-close {
+    width: 30px;
+    cursor: pointer;
+    color: rgba(var(--rgb-colour-text-base), 0.75);
+  }
+
+  .mobile-links {
+    list-style-type: none;
+    margin-top: 1.5rem;
+  }
+
+  .mobile-link {
+    display: block;
+    padding-block: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    position: relative;
+    color: rgba(var(--rgb-colour-text-base), 0.9);
+
+    &:hover {
+      color: rgba(var(--rgb-colour-text-base), 0.6);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgba(var(--rgb-colour-text-base), 0.15),
+        rgba(var(--rgb-colour-text-base), 0.15) 50%,
+        transparent 0,
+        transparent
+      );
+      background-size: 8px 1px;
+    }
+  }
+
+  @media only screen and (min-width: 46rem) {
+    .links {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+    }
+
+    .link {
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      color: rgba(var(--rgb-colour-text-base), 0.85);
+      transition: color 300ms ease;
+
+      &:hover {
+        color: rgba(var(--rgb-colour-accent), 0.73);
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .cta {
+      display: initial;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector('.hamburger') as HTMLElement
+  const mobileClose = document.querySelector('.mobile-close') as HTMLElement
+  const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('show')
+  })
+
+  mobileClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('show')
+  })
+</script>

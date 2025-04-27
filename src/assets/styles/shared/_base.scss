@@ -22,7 +22,8 @@
   --colour-primary: #eceee9;
   --colour-accent: #d1462f;
   --rgb-colour-accent: #{to-rgb(#d1462f)};
-  --colour-accent-hover: #a73825;
+  --colour-accent-hover: hsl(9, 64%, 45%);
+  --colour-accent-active: hsl(9, 64%, 40%);
 
   --spacing-sections: 3rem;
 }

@@ -23,7 +23,7 @@ import Dots from '../Dots.astro'
           <LocationMarker class="location-marker" />
           <p class="location-text">Bradford and Surrounding Areas</p>
         </div>
-        <Button class="cta">
+        <Button variant="primary" class="cta">
           <span>Get In Touch</span>
           <ArrowRight />
         </Button>
@@ -73,6 +73,7 @@ import Dots from '../Dots.astro'
   @media only screen and (min-width: 0rem) {
     header {
       background-color: var(--colour-primary);
+      padding-top: 1.5rem;
     }
 
     .container {
@@ -164,6 +165,7 @@ import Dots from '../Dots.astro'
     }
 
     .benefits {
+      position: relative;
       margin-top: 1rem;
       list-style-type: none;
       color: rgba(var(--rgb-colour-text-base), 0.66);

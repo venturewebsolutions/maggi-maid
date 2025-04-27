@@ -1,30 +1,85 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-interface Props extends HTMLAttributes<'button'> {}
+type BaseProps = {
+  variant: 'primary' | 'secondary'
+}
+
+type Props = (
+  | ({
+      'is:link'?: false
+    } & HTMLAttributes<'button'>)
+  | ({
+      'is:link': true
+    } & HTMLAttributes<'link'>)
+) &
+  BaseProps
+
+const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
 ---
 
-<button {...Astro.props} type="button">
-  <slot />
-</button>
+{
+  isLink ? (
+    <a
+      {...props}
+      data-variant={variant}
+      class:list={[Astro.props.class, 'btn']}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      {...props}
+      class:list={[Astro.props.class, 'btn']}
+      type="button"
+      data-variant={variant}
+    >
+      <slot />
+    </button>
+  )
+}
 
 <style lang="scss">
-  button {
+  .btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
 
-    background-color: var(--colour-accent);
-    color: var(--colour-primary);
     font-weight: 600;
     border-radius: 10px;
+    border-style: 1px;
+    border-width: 1px;
     padding: 0.5rem 1.5rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 300ms ease;
 
-    &:hover {
-      background-color: var(--colour-accent-hover);
+    &[data-variant='primary'] {
+      background-color: var(--colour-accent);
+      border-color: var(--colour-accent);
+      color: var(--colour-primary);
+
+      &:hover {
+        background-color: var(--colour-accent-hover);
+      }
+
+      &:active {
+        background-color: var(--colour-accent-active);
+      }
+    }
+
+    &[data-variant='secondary'] {
+      background-color: transparent;
+      border-color: var(--colour-accent);
+      color: var(--colour-accent);
+
+      &:hover {
+        background-color: rgba(var(--rgb-colour-accent), 0.1);
+      }
+
+      &:active {
+        background-color: rgba(var(--rgb-colour-accent), 0.25);
+      }
     }
   }
 </style>

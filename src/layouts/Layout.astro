@@ -2,7 +2,7 @@
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
 // import { url } from '../utils'
 import '../assets/styles/shared.scss'
-// import Nav from '../components/Nav.astro'
+import Nav from '../components/Nav.astro'
 // import Footer from '../components/Footer.astro'
 import _ from 'lodash'
 
@@ -149,7 +149,7 @@ const { title, description = SITE_DESCRIPTION, og } = Astro.props
     <slot name="head" />
   </head>
   <body>
-    <!-- <Nav /> -->
+    <Nav />
 
     <main>
       <slot />
