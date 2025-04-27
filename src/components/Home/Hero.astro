@@ -11,7 +11,7 @@ import Dots from '../Dots.astro'
     <div class="column">
       <div>
         <p class="topper">Welcome to Maggi Maid</p>
-        <h1 class="h1 heading">
+        <h1 class="h1 heading has-underline">
           Trusted Home Care and Support For Independent Adults
         </h1>
         <p class="subheading">
@@ -90,19 +90,8 @@ import Dots from '../Dots.astro'
     .heading {
       position: relative;
       margin-top: 0.5rem;
+      padding-bottom: 0.75rem;
       font-size: 2rem;
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: -0.75rem;
-        width: 100%;
-        max-width: 120px;
-        height: 3px;
-        background-color: var(--colour-text-base);
-        border-radius: 9999px;
-      }
     }
 
     .subheading {

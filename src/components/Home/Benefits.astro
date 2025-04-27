@@ -1,0 +1,181 @@
+---
+import FistIcon from '../FistIcon.astro'
+import HeartShakeIcon from '../HeartShakeIcon.astro'
+import SecureHandshakeIcon from '../SecureHandshakeIcon.astro'
+---
+
+<section id="benefits" class="section">
+  <div class="container">
+    <h2 class="h2 heading has-underline">
+      Why Finding the Right Help at Home Matters
+    </h2>
+
+    <div class="paragraphs">
+      <p class="paragraph">
+        Many seniors wish to stay in their homes—surrounded by memories and
+        comfort—but daily tasks become harder to manage alone.
+      </p>
+
+      <p class="paragraph">
+        Whether it's light housekeeping, grocery shopping or simply needing
+        someone to check in,
+        <span class="emphasis">
+          finding the right help can feel overwhelming, but with me you don't
+          have to worry because:
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="container">
+      <section class="card">
+        <div class="icon-container">
+          <div class="icon-wrapper">
+            <HeartShakeIcon />
+          </div>
+        </div>
+        <h3 class="h3 card-heading">
+          Consistent, Trusted Care for Your Home and Routines
+        </h3>
+        <p class="card-paragraph">
+          With me, you'll always receive the same reliable, honest, and
+          respectful care — without last-minute cancellations.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="icon-container">
+          <div class="icon-wrapper">
+            <SecureHandshakeIcon />
+          </div>
+        </div>
+        <h3 class="h3 card-heading">
+          One Dedicated Carer &mdash; No Rotating Strangers
+        </h3>
+        <p class="card-paragraph">
+          I do things differently. As your dedicated home helper, you'll always
+          see me — no rotating strangers, no unfamiliar faces. Just reliable,
+          consistent support from someone who truly cares.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="icon-container">
+          <div class="icon-wrapper">
+            <FistIcon />
+          </div>
+        </div>
+        <h3 class="h3 card-heading">
+          Helping Seniors to Stay Active, Independent, and Engaged
+        </h3>
+        <p class="card-paragraph">
+          I respect their independence, providing support that empowers, not
+          intrudes, so they can maintain control over their daily lives while
+          receiving the care and companionship they need.
+        </p>
+      </section>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @media only screen and (min-width: 0rem) {
+    #benefits {
+      background:
+        url('../../assets/images/benefits-section-background.svg') center
+          no-repeat,
+        linear-gradient(var(--colour-secondary), var(--colour-secondary));
+    }
+
+    .heading {
+      color: var(--colour-primary);
+      text-align: center;
+      max-width: 26rem;
+      margin-inline: auto;
+      font-size: 1.75rem;
+      position: relative;
+      padding-bottom: 1rem;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .paragraphs {
+      margin-top: 2rem;
+      max-width: 38rem;
+      margin-inline: auto;
+    }
+
+    .paragraph {
+      margin-top: 1.5rem;
+      color: rgba(var(--rgb-colour-primary), 0.8);
+    }
+
+    .emphasis {
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .cards {
+      margin-top: 2rem;
+
+      & > .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+
+    .card {
+      background-color: var(--colour-primary);
+      border-radius: 100px;
+      padding: 2rem 2rem 3rem;
+      text-align: center;
+      flex: 1;
+      box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .icon-container {
+      text-align: center;
+    }
+
+    .icon-wrapper {
+      border-radius: 100%;
+      background-color: var(--colour-secondary);
+      display: inline-block;
+      padding: 0.5rem;
+    }
+
+    .card-heading {
+      margin-top: 1rem;
+    }
+
+    .card-paragraph {
+      margin-top: 1rem;
+      text-align: justify;
+    }
+  }
+
+  @media only screen and (min-width: 60rem) {
+    #benefits {
+      padding-bottom: 0;
+    }
+
+    .cards {
+      background-image: linear-gradient(
+        var(--colour-primary),
+        var(--colour-primary)
+      );
+      background-position-y: 100%;
+      background-size: 100% 50%;
+      background-repeat: no-repeat;
+
+      & > .container {
+        flex-direction: row;
+      }
+    }
+  }
+</style>
