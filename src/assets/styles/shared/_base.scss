@@ -30,14 +30,12 @@
   --spacing-sections: 3rem;
 }
 
-@media only screen and (min-width: 0rem) {
-  html {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-base);
-    line-height: var(--line-height-base);
-    color: var(--colour-text-base);
-  }
+html {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: var(--line-height-base);
+  color: var(--colour-text-base);
 }
 
 .h1,
@@ -49,4 +47,10 @@
   font-family: var(--font-family-headings);
   font-weight: var(--font-weight-headings);
   line-height: var(--line-height-headings);
+}
+
+@media only screen and (min-width: 32rem) {
+  :root {
+    --spacing-sections: 5rem;
+  }
 }

@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets'
+import { url } from '../../utils'
+import ArrowRight from '../ArrowRight.astro'
+---
+
+<section id="about" class="section">
+  <div class="container columns">
+    <div class="column-a">
+      <p class="topper">About</p>
+      <h2 class="heading has-underline">A Carer Who Truly Understands</h2>
+      <p class="paragraph">
+        I know that hollow feeling in your stomach when you need to find help
+        for a loved one. Maybe you're an older person who hates asking for
+        assistance, or a family member terrified of choosing the wrong carer. I
+        understand completely - I felt the same while caring for my mum with
+        dementia and my dad with cancer.
+      </p>
+      <p class="paragraph">
+        Over 30 years as a registered childminder, I learned just how precious
+        trust is when welcoming someone into your home. Now, I bring that same
+        warmth, patience, and dedication to helping older adults stay
+        independent—because life should be lived fully at every age and under
+        their own terms.
+      </p>
+      <a href={url('/about/')} class="link">
+        <span>Read More</span>
+        <ArrowRight />
+      </a>
+    </div>
+
+    <div class="column-b">
+      <div class="image-wrapper has-dots-before has-dots-after">
+        <Image
+          src={import('../../assets/images/hero-image-1.png')}
+          alt="A senior lady smiling and talking with her companion."
+          widths={[166, 344]}
+          sizes="(max-width: 767px) 50vw, 25vw"
+          loading="eager"
+          class="image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .columns {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .topper {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .paragraph {
+    margin-top: 1.5rem;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--colour-accent);
+    font-weight: 600;
+    transition: color 300ms ease;
+    margin-top: 1.5rem;
+
+    &:hover {
+      color: rgba(var(--rgb-colour-accent), 0.75);
+    }
+
+    &:active {
+      color: rgba(var(--rgb-colour-accent), 0.5);
+    }
+  }
+
+  .image-wrapper {
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  @media only screen and (min-width: 22rem) {
+    .image-wrapper {
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+
+      &::after {
+        display: initial;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 46rem) {
+    .columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .column-b {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-wrapper {
+      max-width: 20rem;
+    }
+
+    .image {
+      aspect-ratio: 377/584;
+      border-radius: 9999px;
+    }
+  }
+</style>
