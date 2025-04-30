@@ -1,0 +1,155 @@
+---
+import { Image } from 'astro:assets'
+import StarIcon from '../StarIcon.astro'
+import OpeningQuoteIcon from '../OpeningQuoteIcon.astro'
+import ClosingQuoteIcon from '../ClosingQuoteIcon.astro'
+---
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="card">
+      <OpeningQuoteIcon aria-hidden="true" class="opening-quote" />
+      <ClosingQuoteIcon aria-hidden="true" class="closing-quote" />
+
+      <h2 class="h2 heading has-underline">What People Say About Me</h2>
+
+      <div class="review">
+        <div>
+          <Image
+            src={import('../../assets/images/testimonial-photo.jpg')}
+            alt="A senior lady dancing at a party."
+            class="review-photo"
+          />
+        </div>
+
+        <div class="review-content">
+          <p class="review-paragraph">
+            "My sons were so worried about me burning myself at the stove after
+            my eyes got bad. Then they found Margaret. She doesn't just cook for
+            me; she cooks with me, telling me what she's doing so I still feel
+            part of it.
+          </p>
+          <p class="review-paragraph">
+            She remembers how I like my food and she even writes the dates on my
+            meals in big letters I can actually see. Last week, she noticed I'd
+            run low on my favourite biscuits and surprised me with a fresh
+            packet. She's wonderful!!”.
+          </p>
+          <div class="review-footer">
+            <div class="review-rating">
+              {[...Array(5)].map(() => <StarIcon />)}
+            </div>
+            <p class="review-author">Joyce Hardy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  #testimonials {
+    background-color: var(--colour-primary);
+  }
+
+  .card {
+    background-color: var(--colour-surface);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
+
+  .opening-quote,
+  .closing-quote {
+    display: none;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2.25rem;
+    text-align: center;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .review {
+    display: grid;
+  }
+
+  .review-photo {
+    border-radius: 20px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .review-content {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: justify;
+  }
+
+  .review-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .review-rating {
+    color: var(--colour-accent);
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .review-author {
+    font-weight: 700;
+    font-family: var(--font-family-headings);
+  }
+
+  @media only screen and (min-width: 32rem) {
+    .review {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      // align-items: center;
+    }
+
+    .review-content {
+      margin-top: 0;
+      align-self: center;
+    }
+
+    .review-photo {
+      aspect-ratio: 492/426;
+    }
+  }
+
+  @media only screen and (min-width: 86rem) {
+    .opening-quote,
+    .closing-quote {
+      display: initial;
+      position: absolute;
+      color: #9da5a0;
+    }
+
+    .opening-quote {
+      top: 0;
+      left: 0;
+      transform: translate(-30%, -50%);
+    }
+
+    .closing-quote {
+      bottom: 0;
+      right: 0;
+      transform: translate(30%, 50%);
+    }
+  }
+</style>

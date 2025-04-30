@@ -8,7 +8,7 @@ import ArrowRight from '../ArrowRight.astro'
   <div class="container columns">
     <div class="column-a">
       <p class="topper">About</p>
-      <h2 class="heading has-underline">A Carer Who Truly Understands</h2>
+      <h2 class="h2 heading has-underline">A Carer Who Truly Understands</h2>
       <p class="paragraph">
         I know that hollow feeling in your stomach when you need to find help
         for a loved one. Maybe you're an older person who hates asking for
@@ -36,7 +36,6 @@ import ArrowRight from '../ArrowRight.astro'
           alt="A senior lady smiling and talking with her companion."
           widths={[166, 344]}
           sizes="(max-width: 767px) 50vw, 25vw"
-          loading="eager"
           class="image"
         />
       </div>
@@ -64,6 +63,7 @@ import ArrowRight from '../ArrowRight.astro'
 
   .paragraph {
     margin-top: 1.5rem;
+    text-align: justify;
   }
 
   .link {
