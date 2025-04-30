@@ -1,8 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-  <path
-    d="M19 5L5 19M5.00001 5L19 19"
-    stroke="currentColor"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"></path>
-</svg>
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'svg'> {
+  variant: 'solid' | 'filled'
+}
+
+const { variant, ...props } = Astro.props
+---
+
+{
+  variant === 'solid' ? (
+    <svg
+      {...props}
+      width="24"
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M19 5L5 19M5.00001 5L19 19"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  ) : variant === 'filled' ? (
+    <svg
+      {...props}
+      width="34"
+      height="34"
+      viewBox="0 0 34 34"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0.333008 16.9999C0.333008 7.78325 7.78301 0.333252 16.9997 0.333252C26.2163 0.333252 33.6663 7.78325 33.6663 16.9999C33.6663 26.2166 26.2163 33.6666 16.9997 33.6666C7.78301 33.6666 0.333008 26.2166 0.333008 16.9999ZM21.8163 24.1666C22.4663 24.8166 23.5163 24.8166 24.1663 24.1666C24.7997 23.5166 24.7997 22.4499 24.1663 21.8166L19.3497 16.9999L24.1663 12.1833C24.8163 11.5333 24.8163 10.4833 24.1663 9.83325C23.5163 9.18325 22.4663 9.18325 21.8163 9.83325L16.9997 14.6499L12.183 9.83325C11.533 9.18325 10.483 9.18325 9.83301 9.83325C9.52092 10.1446 9.34553 10.5674 9.34553 11.0083C9.34553 11.4491 9.52092 11.8719 9.83301 12.1833L14.6497 16.9999L9.83301 21.8166C9.52092 22.128 9.34553 22.5507 9.34553 22.9916C9.34553 23.4324 9.52092 23.8552 9.83301 24.1666C10.483 24.8166 11.533 24.8166 12.183 24.1666L16.9997 19.3499L21.8163 24.1666Z"
+        fill="currentColor"
+      />
+    </svg>
+  ) : null
+}

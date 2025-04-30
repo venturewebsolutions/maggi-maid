@@ -56,7 +56,7 @@ import Button from './Button.astro'
             </a>
 
             <button class="mobile-close">
-              <CloseIcon />
+              <CloseIcon variant="solid" />
             </button>
           </div>
         </div>
@@ -166,6 +166,11 @@ import Button from './Button.astro'
     width: 30px;
     cursor: pointer;
     color: rgba(var(--rgb-colour-text-base), 0.75);
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .mobile-links {

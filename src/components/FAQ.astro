@@ -1,0 +1,94 @@
+---
+import type { HTMLTag } from 'astro/types'
+import CloseIcon from './CloseIcon.astro'
+
+interface Props {
+  tag: HTMLTag
+  question: string
+  answer: string
+  'is:open': boolean
+}
+
+const { tag: Question, 'is:open': isOpen, ...props } = Astro.props
+---
+
+<div {...props} class="faq" class:list={[{ open: Astro.props['is:open'] }]}>
+  <button class="faq-header">
+    <Question class="faq-question">{Astro.props.question}</Question>
+    <CloseIcon variant="filled" class="faq-close-icon" />
+  </button>
+  <p class="faq-body">{Astro.props.answer}</p>
+</div>
+
+<style lang="scss">
+  .faq {
+    box-shadow: 0px 4px 40px 0px rgba(var(--rgb-colour-text-base), 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .faq-header {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: left;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.025);
+    }
+  }
+
+  .faq-question {
+    font-weight: normal;
+  }
+
+  .faq-close-icon {
+    width: 1.5rem;
+    height: auto;
+    color: var(--colour-secondary);
+    transition: transform 300ms ease;
+    transform: rotateZ(135deg);
+    flex-shrink: 0;
+  }
+
+  .faq-body {
+    padding: 1rem;
+    display: none;
+  }
+
+  .faq.open {
+    .faq-header {
+      border-bottom: 2px solid rgba(var(--rgb-colour-secondary), 0.8);
+    }
+
+    .faq-close-icon {
+      transform: rotateZ(360deg);
+    }
+
+    .faq-body {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 36rem) {
+    .faq-close-icon {
+      width: 2rem;
+      margin-top: 1px;
+    }
+  }
+</style>
+
+<script>
+  const faqs = document.querySelectorAll('.faq')
+
+  for (const faq of faqs) {
+    const header = faq.querySelector('.faq-header')
+
+    header?.addEventListener('click', () => {
+      faq.classList.toggle('open')
+    })
+  }
+</script>
