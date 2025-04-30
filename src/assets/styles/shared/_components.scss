@@ -9,6 +9,10 @@
     padding-block: var(--spacing-sections);
   }
 
+  .no-scroll {
+    overflow: hidden;
+  }
+
   .has-underline {
     position: relative;
 

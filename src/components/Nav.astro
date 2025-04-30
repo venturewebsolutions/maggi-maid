@@ -84,7 +84,7 @@ import Button from './Button.astro'
     background-color: var(--colour-primary);
     padding-block: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 9999;
   }
 
   nav {
@@ -243,9 +243,11 @@ import Button from './Button.astro'
 
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.add('show')
+    document.body.classList.add('no-scroll')
   })
 
   mobileClose.addEventListener('click', () => {
     mobileMenu.classList.remove('show')
+    document.body.classList.remove('no-scroll')
   })
 </script>
