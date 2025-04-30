@@ -4,6 +4,7 @@ import ArrowRight from '../ArrowRight.astro'
 import Button from '../Button.astro'
 import LocationMarker from '../LocationMarker.astro'
 import Dots from '../Dots.astro'
+import CheckmarkListMarker from '../CheckmarkListMarker.astro'
 ---
 
 <header class="section">
@@ -53,15 +54,15 @@ import Dots from '../Dots.astro'
 
       <ul class="benefits">
         <li>
-          <span class="checkmark">✓</span>
+          <CheckmarkListMarker />
           <span class="text">Fully qualified and DBS checked</span>
         </li>
         <li>
-          <span class="checkmark">✓</span>
+          <CheckmarkListMarker />
           <span class="text">30+ Years of childminding experience</span>
         </li>
         <li>
-          <span class="checkmark">✓</span>
+          <CheckmarkListMarker />
           <span class="text">Devoted to caring for your loved one at home</span>
         </li>
       </ul>
@@ -159,13 +160,6 @@ import Dots from '../Dots.astro'
       list-style-type: none;
       color: rgba(var(--rgb-colour-text-base), 0.66);
       font-style: italic;
-    }
-
-    .checkmark {
-      color: rgba(var(--rgb-colour-accent), 0.73);
-      font-weight: 700;
-      font-size: 1.1em;
-      margin-right: 0.25rem;
     }
   }
 

@@ -1,0 +1,211 @@
+---
+import { Image } from 'astro:assets'
+import { url } from '../../utils'
+import ArrowRight from '../ArrowRight.astro'
+import CheckmarkListMarker from '../CheckmarkListMarker.astro'
+
+const services = [
+  {
+    title: 'Senior Home Help Services',
+    features: [
+      'Light domestic cleaning services',
+      'Laundry',
+      'Meal preparation catered to individual tastes',
+      'Shopping for groceries and other essentials',
+    ],
+    link: url('/senior-home-help-services'),
+  },
+  {
+    title: 'Senior Support Services',
+    features: [
+      'Transportation to appointments',
+      'Assistance with shopping',
+      'Assistance making telephone appointments',
+    ],
+    link: url('/senior-support-services'),
+  },
+  {
+    title: 'Senior Companionship Services',
+    features: ['Home sitting service', 'Accompaniment on social trips'],
+    link: url('/senior-companionship-services'),
+  },
+]
+---
+
+<section id="services" class="section">
+  <div class="container">
+    <header class="header">
+      <p class="topper">Services</p>
+      <h2 class="h2 heading has-underline">
+        Let Me Help to Maintain Seniors' Independence
+      </h2>
+      <p>
+        I offer a range of services that help senior adults maintain their
+        day-to-day independence while offering that little bit of extra support
+        for those who need it.
+      </p>
+      <p class="pricing">At £15.00 per hour (minimum 2-hour visits).</p>
+    </header>
+
+    <div class="side-by-side">
+      <div class="services-list">
+        {
+          services.map((service) => (
+            <section>
+              <h3 class="h3">{service.title}</h3>
+              <ul class="service-features">
+                {service.features.map((feature) => (
+                  <li class="service-feature">
+                    <CheckmarkListMarker />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={service.link} class="service-link">
+                <span>Read More</span>
+                <ArrowRight />
+              </a>
+            </section>
+          ))
+        }
+      </div>
+
+      <div class="image-column">
+        <div class="image-wrapper has-dots-before has-dots-after">
+          <Image
+            src={import('../../assets/images/hero-image-1.png')}
+            alt="A senior lady smiling and talking with her companion."
+            widths={[166, 344]}
+            sizes="(max-width: 767px) 50vw, 25vw"
+            loading="eager"
+            class="image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  #services {
+    background-color: var(--colour-primary);
+  }
+
+  .container {
+    max-width: 60rem;
+  }
+
+  .header {
+    max-width: 43rem;
+    margin-inline: auto;
+  }
+
+  .topper {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+    margin-top: 0.25rem;
+  }
+
+  .services-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+    order: 1;
+  }
+
+  .service-features {
+    list-style-type: none;
+    margin-top: 0.5rem;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--colour-accent);
+    font-weight: 600;
+    transition: color 300ms ease;
+    margin-top: 0.5rem;
+
+    &:hover {
+      color: rgba(var(--rgb-colour-accent), 0.75);
+    }
+
+    &:active {
+      color: rgba(var(--rgb-colour-accent), 0.5);
+    }
+  }
+
+  .image-column {
+    margin-top: 2rem;
+    order: 1;
+  }
+
+  .image-wrapper {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    position: relative;
+
+    .image {
+      position: relative;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 22rem) {
+    .image-wrapper {
+      padding-bottom: 1rem;
+      padding-right: 1rem;
+
+      &::after {
+        display: initial;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 36rem) {
+    .side-by-side {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .image-column {
+      max-width: 40%;
+      text-align: right;
+    }
+
+    .image-wrapper {
+      position: sticky;
+      top: 2rem;
+      max-width: min(20rem, 100%);
+      display: inline-block;
+
+      .image {
+        aspect-ratio: 377/584;
+        border-radius: 9999px;
+      }
+    }
+  }
+</style>

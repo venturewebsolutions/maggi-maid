@@ -9,17 +9,49 @@
     padding-block: var(--spacing-sections);
   }
 
-  .has-underline::after {
-    content: '';
+  .has-underline {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: 120px;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 9999px;
+    }
+  }
+
+  .has-dots-before,
+  .has-dots-after {
+    position: relative;
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .has-dots-before::before,
+  .has-dots-after::after {
+    content: url('/images/dots.svg');
+    z-index: 0;
     display: block;
     position: absolute;
-    bottom: 0;
+  }
+
+  .has-dots-before::before {
+    top: 0;
     left: 0;
-    width: 100%;
-    max-width: 120px;
-    height: 2px;
-    background-color: currentColor;
-    border-radius: 9999px;
+  }
+
+  .has-dots-after::after {
+    bottom: 0;
+    right: 0;
   }
 }
 
