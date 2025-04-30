@@ -3,7 +3,6 @@ import { Image } from 'astro:assets'
 import ArrowRight from '../ArrowRight.astro'
 import Button from '../Button.astro'
 import LocationMarker from '../LocationMarker.astro'
-import Dots from '../Dots.astro'
 import CheckmarkListMarker from '../CheckmarkListMarker.astro'
 ---
 
@@ -33,23 +32,26 @@ import CheckmarkListMarker from '../CheckmarkListMarker.astro'
 
     <div class="column">
       <div class="images">
-        <Dots class="dots" aria-hidden="true" />
-        <Dots class="dots" aria-hidden="true" />
-
-        <Image
-          src={import('../../assets/images/hero-image-1.png')}
-          alt="A senior lady smiling and talking with her companion."
-          widths={[166, 344]}
-          sizes="(max-width: 767px) 50vw, 25vw"
-          loading="eager"
-        />
-        <Image
-          src={import('../../assets/images/hero-image-2.png')}
-          alt="A senior lady enjoying Christmas celebrations."
-          widths={[166, 344]}
-          sizes="(max-width: 767px) 50vw, 25vw"
-          loading="eager"
-        />
+        <div class="has-dots-before">
+          <Image
+            src={import('../../assets/images/hero-image-1.png')}
+            alt="A senior lady smiling and talking with her companion."
+            widths={[166, 344]}
+            sizes="(max-width: 767px) 50vw, 25vw"
+            loading="eager"
+            class="image-1"
+          />
+        </div>
+        <div class="has-dots-after">
+          <Image
+            src={import('../../assets/images/hero-image-2.png')}
+            alt="A senior lady enjoying Christmas celebrations."
+            widths={[166, 344]}
+            sizes="(max-width: 767px) 50vw, 25vw"
+            loading="eager"
+            class="image-2"
+          />
+        </div>
       </div>
 
       <ul class="benefits">
@@ -131,26 +133,10 @@ import CheckmarkListMarker from '../CheckmarkListMarker.astro'
         border-radius: 9999px;
         box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.25);
         flex: 1;
-        width: 0;
-
-        &:last-of-type {
-          margin-top: 2.5rem;
-        }
       }
 
-      .dots {
-        position: absolute;
-        color: rgba(var(--rgb-colour-accent), 0.6);
-
-        &:first-of-type {
-          top: 0;
-          left: 0;
-        }
-
-        &:last-of-type {
-          bottom: 0;
-          right: 0;
-        }
+      .image-2 {
+        margin-top: 2.5rem;
       }
     }
 
@@ -201,14 +187,6 @@ import CheckmarkListMarker from '../CheckmarkListMarker.astro'
 
       & > div {
         max-width: 30rem;
-      }
-    }
-
-    .images {
-      img {
-        &:last-of-type {
-          margin-top: 2.5rem;
-        }
       }
     }
 
