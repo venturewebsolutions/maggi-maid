@@ -1,0 +1,26 @@
+---
+import ContactForm from './ContactForm.astro'
+---
+
+<section id="contact" class="section">
+  <div class="container">
+    <p class="topper">Contact Me</p>
+    <h2 class="h2 heading has-underline">Get In Touch!</h2>
+
+    <ContactForm />
+  </div>
+</section>
+
+<style lang="scss">
+  .topper {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+</style>

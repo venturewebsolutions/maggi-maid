@@ -1,7 +1,8 @@
 ---
-import { url } from '../../utils'
-import ArrowRight from '../ArrowRight.astro'
-import FAQList from '../FAQList.astro'
+import ContactSection from '../components/ContactSection.astro'
+import FAQ from '../components/FAQ.astro'
+import FAQList from '../components/FAQList.astro'
+import Layout from '../layouts/Layout.astro'
 
 const faqs = [
   {
@@ -32,27 +33,30 @@ const faqs = [
 ]
 ---
 
-<section id="faqs" class="section">
-  <div class="container">
-    <p class="topper">FAQs</p>
-    <h2 class="h2 heading has-underline">Do You Have Any Questions?</h2>
+<Layout title="FAQs">
+  <div class="section">
+    <div class="container">
+      <h1 class="topper">FAQs</h1>
+      <h2 class="h2 heading has-underline">Do You Have Any Questions?</h2>
 
-    <FAQList faqs={faqs} tag="h4" />
-
-    <a href={url('/faqs/')} class="link">
-      <span>Read All of Our FAQs</span>
-      <ArrowRight />
-    </a>
+      <FAQList faqs={faqs} tag="h3" />
+    </div>
   </div>
-</section>
+
+  <ContactSection />
+</Layout>
 
 <style lang="scss">
-  #faqs {
+  .section {
     background-color: var(--colour-primary);
   }
 
   .topper {
     font-style: italic;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-base);
+    line-height: var(--line-height-base);
     color: rgba(var(--rgb-colour-text-base), 0.66);
   }
 
@@ -60,24 +64,6 @@ const faqs = [
     font-size: 1.75rem;
     padding-bottom: 1rem;
     margin-top: 0.5rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--colour-accent);
-    font-weight: 600;
-    transition: color 300ms ease;
-    margin-top: 2rem;
-
-    &:hover {
-      color: rgba(var(--rgb-colour-accent), 0.75);
-    }
-
-    &:active {
-      color: rgba(var(--rgb-colour-accent), 0.5);
-    }
+    margin-bottom: 1.5rem;
   }
 </style>

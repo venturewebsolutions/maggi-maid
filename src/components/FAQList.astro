@@ -1,0 +1,35 @@
+---
+import type { HTMLTag } from 'astro/types'
+import FAQ from './FAQ.astro'
+
+type FAQ = {
+  question: string
+  answer: string
+}
+
+interface Props {
+  faqs: FAQ[]
+  tag: HTMLTag
+}
+---
+
+<div class="faq-list">
+  {
+    Astro.props.faqs.map((faq, index) => (
+      <FAQ
+        tag={Astro.props.tag}
+        question={faq.question}
+        answer={faq.answer}
+        is:open={index === 0}
+      />
+    ))
+  }
+</div>
+
+<style lang="scss">
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>
