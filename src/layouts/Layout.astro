@@ -3,7 +3,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts'
 // import { url } from '../utils'
 import '../assets/styles/shared.scss'
 import Nav from '../components/Nav.astro'
-// import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro'
 import _ from 'lodash'
 
 interface Props {
@@ -150,11 +150,9 @@ const { title, description = SITE_DESCRIPTION, og } = Astro.props
   </head>
   <body>
     <Nav />
-
-    <main>
+    <main id="main">
       <slot />
     </main>
-
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>

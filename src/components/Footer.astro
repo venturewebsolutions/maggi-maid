@@ -1,1 +1,147 @@
-This is the Footer component.
+---
+import { Image } from 'astro:assets'
+import { url } from '../utils'
+
+const columns = [
+  {
+    heading: 'Sitemap',
+    links: [
+      {
+        label: 'About',
+        href: url('/about/'),
+      },
+      {
+        label: 'Services',
+        href: url('/services/'),
+      },
+    ],
+  },
+  {
+    heading: 'Our Services',
+    links: [
+      {
+        label: 'Home Help',
+        href: url('/senior-home-help-services/'),
+      },
+      {
+        label: 'Support',
+        href: url('/senior-support-services/'),
+      },
+      {
+        label: 'Companionship',
+        href: url('/senior-companionship-services/'),
+      },
+    ],
+  },
+  {
+    heading: 'Help',
+    links: [
+      {
+        label: 'FAQs',
+        href: url('/faqs/'),
+      },
+      {
+        label: 'Contact',
+        href: url('/contact/'),
+      },
+      {
+        label: '07312 189 652',
+        href: 'tel:+447312189652',
+      },
+    ],
+  },
+]
+---
+
+<footer id="footer" class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="column-heading">
+          <a href={url('/')} class="footer-link">
+            <Image
+              src={import('../assets/images/maggi-maid-logo-white.png')}
+              alt="Maggi Maid logo"
+              class="footer-logo"
+            />
+          </a>
+        </div>
+        <div class="footer-items">
+          <p>Mon - Frid 9:00 - 18:00</p>
+          <p>Sat 10:00 - 14:00</p>
+        </div>
+      </div>
+      {
+        columns.map((column) => (
+          <div class="column">
+            <p class="column-heading">{column.heading}</p>
+
+            <div class="footer-items">
+              {column.links.map((link) => (
+                <p>
+                  <a href={link.href} class="footer-link">
+                    {link.label}
+                  </a>
+                </p>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  #footer {
+    background-color: var(--colour-secondary);
+    color: var(--colour-primary);
+  }
+
+  .columns {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .column-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--font-family-headings);
+  }
+
+  .footer-logo {
+    max-width: 7rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-link:hover {
+    opacity: 0.8;
+  }
+
+  @media only screen and (min-width: 32rem) {
+    .columns {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .column:first-child {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  @media only screen and (min-width: 46rem) {
+    .columns {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .column:first-child {
+      grid-column: auto;
+    }
+  }
+</style>
