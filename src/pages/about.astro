@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets'
+import ContactSection from '../components/ContactSection.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="About Me">
+  <div class="section">
+    <div class="container">
+      <p class="topper">About Me</p>
+      <h1 class="h1 heading has-underline">
+        I've Been Where You Are - Let's Make It Easier
+      </h1>
+
+      <Image
+        src={import('../assets/images/about-me-photo.jpg')}
+        alt="Me with my mum and nephew"
+        class="photo"
+      />
+
+      <div class="card">
+        <p>Hi, I'm Margaret!</p>
+
+        <p>
+          For over 30 years, I've been the steady pair of hands families rely
+          on. As a childminder raising my own three kids (and later, dozens of
+          others), I learned that real care means showing up—not just
+          physically, but emotionally. Now, I bring that same dedication to
+          helping seniors stay independent at home.
+        </p>
+
+        <p>
+          After walking alongside my mum through her later years. I understand
+          how complicated it gets when someone needs help but doesn't want to
+          admit it, or when everyday tasks start feeling overwhelming.
+        </p>
+
+        <p>
+          That's why I offer straightforward home help here in Bradford. No big
+          agency with rotating staff - just me showing up when I say I will,
+          helping with shopping, meals around the house, getting to
+          appointments, or simply being good company. I'm DBS-checked and
+          properly trained, but more importantly, I approach this work like I
+          did with my childminding - noticing what needs doing without being
+          asked, respecting how people like things done, and showing up
+          consistently.
+        </p>
+
+        <p>
+          It's not about grand gestures. Just practical help from someone who's
+          been there with her own family.
+        </p>
+
+        <p>
+          (Please note: I don't provide personal care like bathing or
+          medication.)
+        </p>
+      </div>
+
+      <div class="certificates">
+        <div class="certificate-wrapper">
+          <Image
+            src={import('../assets/images/dbs-checked-certificate.png')}
+            alt="DBS Checked certificate"
+            class="certificate"
+          />
+        </div>
+        <div class="certificate-wrapper">
+          <Image
+            src={import('../assets/images/food-safe-certificate.png')}
+            alt="Food Safe certificate"
+            class="certificate"
+          />
+        </div>
+        <div class="certificate-wrapper">
+          <Image
+            src={import('../assets/images/adult-safeguarding-certificate.png')}
+            alt="Adult Safeguarding certificate"
+            class="certificate"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ContactSection />
+</Layout>
+
+<style lang="scss">
+  .section {
+    background-color: var(--colour-primary);
+    padding-bottom: 1rem;
+  }
+
+  .topper {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 30rem;
+  }
+
+  .photo {
+    border-radius: 1.25rem;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    margin-block: 2.5rem;
+  }
+
+  .card {
+    max-width: 48rem;
+    margin-inline: auto;
+    border-radius: 10px;
+    padding: 2rem 2rem 8rem;
+    background-color: var(--colour-surface);
+    box-shadow: 0px 8px 250px 0px rgba(27, 33, 62, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .certificates {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    transform: translateY(-50%);
+    padding-inline: 2rem;
+  }
+
+  .certificate-wrapper {
+    border-radius: 9999px;
+    background-color: var(--colour-surface);
+    box-shadow: 0px 4px 31px 0px rgba(0, 0, 0, 0.25);
+    max-width: 8rem;
+    padding: clamp(1rem, 4vw, 2rem) clamp(0.5rem, 3vw, 1.5rem);
+  }
+</style>
