@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types'
 
 type BaseProps = {
-  variant: 'primary' | 'secondary'
+  variant: 'primary' | 'primary-outlined' | 'tertiary' | 'quaternary'
 }
 
 type Props = (
@@ -30,9 +30,9 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
   ) : (
     <button
       {...props}
-      class:list={[Astro.props.class, 'btn']}
-      type="button"
       data-variant={variant}
+      type="button"
+      class:list={[Astro.props.class, 'btn']}
     >
       <slot />
     </button>
@@ -41,6 +41,8 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
 
 <style lang="scss">
   .btn {
+    --border-width: 0px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,15 +50,15 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
 
     font-weight: 600;
     border-radius: 10px;
-    border-style: 1px;
-    border-width: 1px;
-    padding: 0.5rem 1.5rem;
+    border-style: solid;
+    border-width: var(--border-width);
+    padding: calc(0.5rem - var(--border-width))
+      calc(1.5rem - var(--border-width));
     cursor: pointer;
     transition: background-color 300ms ease;
 
     &[data-variant='primary'] {
       background-color: var(--colour-accent);
-      border-color: var(--colour-accent);
       color: var(--colour-primary);
 
       &:hover {
@@ -68,7 +70,9 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
       }
     }
 
-    &[data-variant='secondary'] {
+    &[data-variant='primary-outlined'] {
+      --border-width: 1px;
+
       background-color: transparent;
       border-color: var(--colour-accent);
       color: var(--colour-accent);
@@ -79,6 +83,32 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
 
       &:active {
         background-color: rgba(var(--rgb-colour-accent), 0.25);
+      }
+    }
+
+    &[data-variant='tertiary'] {
+      background-color: #14281d;
+      color: var(--colour-primary);
+
+      &:hover {
+        background-color: rgba(20, 40, 29, 0.75);
+      }
+
+      &:active {
+        background-color: rgba(20, 40, 29, 0.5);
+      }
+    }
+
+    &[data-variant='quaternary'] {
+      background-color: #eceee9;
+      color: #14281d;
+
+      &:hover {
+        background-color: rgba(236, 238, 233, 0.75);
+      }
+
+      &:active {
+        background-color: rgba(236, 238, 233, 0.5);
       }
     }
   }
