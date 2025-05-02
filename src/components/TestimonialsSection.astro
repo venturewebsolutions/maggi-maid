@@ -16,39 +16,41 @@ const { class: _, ...props } = Astro.props
   class:list={[Astro.props.class, 'section']}
 >
   <div class="container">
-    <div class="card">
-      <OpeningQuoteIcon aria-hidden="true" class="opening-quote" />
-      <ClosingQuoteIcon aria-hidden="true" class="closing-quote" />
+    <div class="card-wrapper">
+      <div class="card">
+        <OpeningQuoteIcon aria-hidden="true" class="opening-quote" />
+        <ClosingQuoteIcon aria-hidden="true" class="closing-quote" />
 
-      <h2 class="h2 heading has-underline">What People Say About Me</h2>
+        <h2 class="h2 heading has-underline">What People Say About Me</h2>
 
-      <div class="review">
-        <div>
-          <Image
-            src={import('../assets/images/testimonial-photo.jpg')}
-            alt="A senior lady dancing at a party."
-            class="review-photo"
-          />
-        </div>
+        <div class="review">
+          <div>
+            <Image
+              src={import('../assets/images/testimonial-photo.jpg')}
+              alt="A senior lady dancing at a party."
+              class="review-photo"
+            />
+          </div>
 
-        <div class="review-content">
-          <p class="review-paragraph">
-            "My sons were so worried about me burning myself at the stove after
-            my eyes got bad. Then they found Margaret. She doesn't just cook for
-            me; she cooks with me, telling me what she's doing so I still feel
-            part of it.
-          </p>
-          <p class="review-paragraph">
-            She remembers how I like my food and she even writes the dates on my
-            meals in big letters I can actually see. Last week, she noticed I'd
-            run low on my favourite biscuits and surprised me with a fresh
-            packet. She's wonderful!!”.
-          </p>
-          <div class="review-footer">
-            <div class="review-rating">
-              {[...Array(5)].map(() => <StarIcon />)}
+          <div class="review-content">
+            <p class="review-paragraph">
+              "My sons were so worried about me burning myself at the stove
+              after my eyes got bad. Then they found Margaret. She doesn't just
+              cook for me; she cooks with me, telling me what she's doing so I
+              still feel part of it.
+            </p>
+            <p class="review-paragraph">
+              She remembers how I like my food and she even writes the dates on
+              my meals in big letters I can actually see. Last week, she noticed
+              I'd run low on my favourite biscuits and surprised me with a fresh
+              packet. She's wonderful!!”.
+            </p>
+            <div class="review-footer">
+              <div class="review-rating">
+                {[...Array(5)].map(() => <StarIcon />)}
+              </div>
+              <p class="review-author">Joyce Hardy</p>
             </div>
-            <p class="review-author">Joyce Hardy</p>
           </div>
         </div>
       </div>
@@ -124,7 +126,6 @@ const { class: _, ...props } = Astro.props
     .review {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      // align-items: center;
     }
 
     .review-content {
@@ -138,9 +139,13 @@ const { class: _, ...props } = Astro.props
   }
 
   @media only screen and (min-width: 86rem) {
+    .card-wrapper {
+      padding-block: 41px;
+    }
+
     .opening-quote,
     .closing-quote {
-      display: initial;
+      display: block;
       position: absolute;
       color: #9da5a0;
     }
