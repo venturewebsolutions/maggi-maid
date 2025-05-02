@@ -33,6 +33,7 @@
   .has-dots-before,
   .has-dots-after {
     position: relative;
+    display: inline-block;
 
     & > * {
       position: relative;

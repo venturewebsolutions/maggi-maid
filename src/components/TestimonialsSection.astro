@@ -1,11 +1,20 @@
 ---
 import { Image } from 'astro:assets'
-import StarIcon from '../StarIcon.astro'
-import OpeningQuoteIcon from '../OpeningQuoteIcon.astro'
-import ClosingQuoteIcon from '../ClosingQuoteIcon.astro'
+import StarIcon from './StarIcon.astro'
+import OpeningQuoteIcon from './OpeningQuoteIcon.astro'
+import ClosingQuoteIcon from './ClosingQuoteIcon.astro'
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'section'> {}
+
+const { class: _, ...props } = Astro.props
 ---
 
-<section id="testimonials" class="section">
+<section
+  {...props}
+  id="testimonials"
+  class:list={[Astro.props.class, 'section']}
+>
   <div class="container">
     <div class="card">
       <OpeningQuoteIcon aria-hidden="true" class="opening-quote" />
@@ -16,7 +25,7 @@ import ClosingQuoteIcon from '../ClosingQuoteIcon.astro'
       <div class="review">
         <div>
           <Image
-            src={import('../../assets/images/testimonial-photo.jpg')}
+            src={import('../assets/images/testimonial-photo.jpg')}
             alt="A senior lady dancing at a party."
             class="review-photo"
           />
@@ -48,10 +57,6 @@ import ClosingQuoteIcon from '../ClosingQuoteIcon.astro'
 </section>
 
 <style lang="scss">
-  #testimonials {
-    background-color: var(--colour-primary);
-  }
-
   .card {
     background-color: var(--colour-surface);
     padding: 3rem 2rem;
