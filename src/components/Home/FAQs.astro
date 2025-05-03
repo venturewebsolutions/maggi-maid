@@ -2,34 +2,7 @@
 import { url } from '../../utils'
 import ArrowRight from '../ArrowRight.astro'
 import FAQList from '../FAQList.astro'
-
-const faqs = [
-  {
-    question: 'What tasks can you help with?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What if my loved one needs more advanced care?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'Are you DBS checked and insured?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What are your rates and minimum booking?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What areas do you cover?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-]
+import faqs from '../../data/faqs.json'
 ---
 
 <section id="faqs" class="section">
@@ -37,7 +10,7 @@ const faqs = [
     <p class="topper">FAQs</p>
     <h2 class="h2 heading has-underline">Do You Have Any Questions?</h2>
 
-    <FAQList faqs={faqs} tag="h4" />
+    <FAQList faqs={faqs.filter((faq) => faq.featured)} tag="h4" />
 
     <a href={url('/faqs/')} class="link">
       <span>Read All of Our FAQs</span>

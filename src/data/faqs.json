@@ -1,0 +1,47 @@
+[
+  {
+    "question": "What tasks can you help with?",
+    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "featured": true
+  },
+  {
+    "question": "What if my loved one needs more advanced care?",
+    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "featured": true
+  },
+  {
+    "question": "Are you DBS checked and insured?",
+    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "featured": true
+  },
+  {
+    "question": "What are your rates and minimum booking?",
+    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "featured": true
+  },
+  {
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "featured": false
+  },
+  {
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "featured": false
+  },
+  {
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "featured": false
+  },
+  {
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "featured": false
+  },
+  {
+    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "featured": false
+  }
+]

@@ -1,36 +1,8 @@
 ---
 import ContactSection from '../components/ContactSection.astro'
-import FAQ from '../components/FAQ.astro'
 import FAQList from '../components/FAQList.astro'
 import Layout from '../layouts/Layout.astro'
-
-const faqs = [
-  {
-    question: 'What tasks can you help with?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What if my loved one needs more advanced care?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'Are you DBS checked and insured?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What are your rates and minimum booking?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-  {
-    question: 'What areas do you cover?',
-    answer:
-      "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-  },
-]
+import faqs from '../data/faqs.json'
 ---
 
 <Layout title="FAQs">
