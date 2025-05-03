@@ -12,9 +12,10 @@ const { 'show:heading': showHeading = false, class: _, ...props } = Astro.props
 
 <form
   {...props}
-  action=""
-  method="post"
+  method="POST"
   class:list={[Astro.props.class, 'form']}
+  data-netlify="true"
+  name="contact"
 >
   {
     showHeading && (
