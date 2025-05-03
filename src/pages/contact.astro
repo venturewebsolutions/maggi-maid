@@ -1,0 +1,151 @@
+---
+import ClockIcon from '../components/ClockIcon.astro'
+import ContactForm from '../components/ContactForm.astro'
+import LocationMarker from '../components/LocationMarker.astro'
+import PhoneCallIcon from '../components/PhoneCallIcon.astro'
+import WhatsAppIcon from '../components/WhatsAppIcon.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Contact Me">
+  <div class="section">
+    <div class="container">
+      <p class="topper">Contact Me</p>
+      <h1 class="h1 heading has-underline">Get In Touch!</h1>
+      <p class="justify">
+        Ready for reliable, compassionate care? Contact me today to arrange your
+        free consultation. Whether you call, text, or fill out the form below,
+        I'll respond within 24 hours to discuss how I can help you or your loved
+        one live more comfortably at home. Let's take the first step together.
+      </p>
+
+      <div class="columns">
+        <div>
+          <ContactForm />
+        </div>
+
+        <div class="info-column">
+          <div class="info-item">
+            <div class="info-icon-wrapper">
+              <ClockIcon width="30" height="30" class="info-icon" />
+            </div>
+
+            <div class="info-content">
+              <p class="semibold">Opening Hours</p>
+              <p>Monday - Friday: 9:00 to 18:00</p>
+              <p>Saturday: 10:00 to 14:00</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrapper">
+              <LocationMarker class="info-icon" />
+            </div>
+
+            <div class="info-content">
+              <p class="semibold">Location</p>
+              <p>Bradford and Surrounding Areas</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrapper">
+              <PhoneCallIcon width="24" height="24" class="info-icon" />
+            </div>
+
+            <div class="info-content">
+              <p class="semibold">Mobile</p>
+              <a href="+447312189652">07312 189 652</a>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon-wrapper">
+              <WhatsAppIcon width="30" height="30" class="info-icon" />
+            </div>
+
+            <div class="info-content">
+              <p class="semibold">WhatsApp</p>
+              <a href="https://wa.me/+447312189652">07312 189 652</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .section {
+    background-color: var(--colour-primary);
+  }
+
+  .topper {
+    font-style: italic;
+    color: rgba(var(--rgb-colour-text-base), 0.66);
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .columns {
+    display: grid;
+    gap: 2.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .info-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colour-secondary);
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+
+  .info-icon {
+    color: var(--colour-primary);
+  }
+
+  .info-content {
+    line-height: 120%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+  .semibold {
+    font-weight: 600;
+  }
+
+  @media only screen and (min-width: 55rem) {
+    .columns {
+      display: grid;
+      grid-template-columns: 60fr 40fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+  }
+</style>
