@@ -4,6 +4,7 @@ import ArrowRight from '../ArrowRight.astro'
 import Button from '../Button.astro'
 import LocationMarker from '../LocationMarker.astro'
 import CheckmarkListMarker from '../CheckmarkListMarker.astro'
+import { url } from '../../utils'
 ---
 
 <header id="hero" class="section">
@@ -23,7 +24,7 @@ import CheckmarkListMarker from '../CheckmarkListMarker.astro'
           <LocationMarker class="location-marker" />
           <p class="location-text">Bradford and Surrounding Areas</p>
         </div>
-        <Button variant="primary" class="cta">
+        <Button variant="primary" class="cta" is:link href={url('/contact/')}>
           <span>Get In Touch</span>
           <ArrowRight />
         </Button>
