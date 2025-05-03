@@ -89,6 +89,13 @@ const columns = [
         ))
       }
     </div>
+
+    <p class="copyright">
+      © Copyright Maggi Maid - Website by
+      <a href="https://danielapinzonguzman.com" class="footer-link"
+        >Daniela Pinzon Guzman</a
+      >
+    </p>
   </div>
 </footer>
 
@@ -125,6 +132,11 @@ const columns = [
     opacity: 0.8;
   }
 
+  .copyright {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
   @media only screen and (min-width: 32rem) {
     .columns {
       grid-template-columns: repeat(3, 1fr);
@@ -138,6 +150,7 @@ const columns = [
   @media only screen and (min-width: 46rem) {
     .columns {
       grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
     }
 
     .column:first-child {
