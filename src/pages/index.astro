@@ -5,7 +5,7 @@ import Contact from '../components/Home/Contact.astro'
 import FAQs from '../components/Home/FAQs.astro'
 import Hero from '../components/Home/Hero.astro'
 import Services from '../components/Home/Services.astro'
-import Testmonials from '../components/Home/Testmonials.astro'
+import TestimonialsSection from '../components/TestimonialsSection.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
@@ -14,7 +14,13 @@ import Layout from '../layouts/Layout.astro'
   <Benefits />
   <Services />
   <About />
-  <Testmonials />
+  <TestimonialsSection />
   <FAQs />
   <Contact />
 </Layout>
+
+<style lang="scss">
+  #testimonials {
+    background-color: var(--colour-primary);
+  }
+</style>
