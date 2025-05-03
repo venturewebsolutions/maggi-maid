@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets'
+import ServicePage from '../templates/service/ServicePage.astro'
+import ServiceSection from '../templates/service/ServiceSection.astro'
+---
+
+<ServicePage title="Senior Companionship Services">
+  <Fragment slot="hero-image">
+    <Image
+      src={import('../assets/images/hero-image-1.png')}
+      alt="A senior lady smiling and talking with her companion."
+      loading="eager"
+    />
+  </Fragment>
+
+  <Fragment slot="heading">
+    <span class="font-italic font-normal">Senior Companionship Services</span> in
+    Bradford
+  </Fragment>
+
+  <Fragment slot="hero-content">
+    Whether you're looking for friendly company at home or someone to join you
+    out in the community. My companionship services offer warm, attentive
+    support for seniors who want to stay socially connected without the
+    pressure. I understand how meaningful these connections are &mdash; and how
+    anxiety or mobility issues can make them harder. My role isn't just to
+    assist, but to help you enjoy these moments fully.
+  </Fragment>
+
+  <Fragment slot="services">
+    <ServiceSection
+      id="home-sitting-service"
+      number="01"
+      heading="Home Sitting Service"
+    >
+      <Fragment slot="description">
+        Sometimes what's needed most is simply having someone there. I'll
+        provide <span class="font-semibold"
+          >calm, engaged company in your own home</span
+        > &mdash; whether that means sharing stories over tea, helping with light
+        hobbies, or just being present so you feel secure. Many families find this
+        especially helpful when they can't visit as often as they'd like.
+      </Fragment>
+
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/light-domestic-cleaning-services.jpg')}
+          alt="Light domestic cleaning services"
+        />
+      </Fragment>
+    </ServiceSection>
+
+    <ServiceSection
+      id="social-outings-and-trips"
+      number="02"
+      heading="Social Outings & Trips"
+    >
+      <Fragment slot="description">
+        Staying connected shouldn't be difficult. My companionship and outing
+        support for seniors helps you enjoy
+        <span class="font-semibold">coffee meetups with friends</span>,
+        <span class="font-semibold">local events</span>,
+        <span class="font-semibold">park walks</span>,
+        <span class="font-semibold">garden visits</span>, or
+        <span class="font-semibold">religious services</span>—all with friendly,
+        reliable assistance. Whether it's a weekly trip to the café, a community
+        gathering, or simply getting out for fresh air, I provide patient,
+        encouraging company so you can socialize with ease and joy.
+      </Fragment>
+
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/laundry-and-ironing-help.jpg')}
+          alt="laundry and ironing help"
+        />
+      </Fragment>
+    </ServiceSection>
+  </Fragment>
+</ServicePage>
