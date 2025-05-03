@@ -1,331 +1,143 @@
 ---
 import { Image } from 'astro:assets'
-import ContactSection from '../components/ContactSection.astro'
-import Footer from '../components/Footer.astro'
-import TestimonialsSection from '../components/TestimonialsSection.astro'
-import Layout from '../layouts/Layout.astro'
-import Button from '../components/Button.astro'
-import ArrowRight from '../components/ArrowRight.astro'
+import ServicePage from '../templates/service/ServicePage.astro'
+import ServiceSection from '../templates/service/ServiceSection.astro'
 ---
 
-<Layout title="Senior Home Help Services">
-  <div id="hero" class="section">
-    <div class="container">
-      <div class="hero-columns">
-        <div class="hero-column-a">
-          <div class="hero-image-wrapper has-dots-before has-dots-after">
-            <Image
-              src={import('../assets/images/hero-image-1.png')}
-              alt="A senior lady smiling and talking with her companion."
-              loading="eager"
-              class="hero-image"
-            />
-          </div>
-        </div>
+<ServicePage title="Senior Home Help Services">
+  <Fragment slot="hero-image">
+    <Image
+      src={import('../assets/images/hero-image-1.png')}
+      alt="A senior lady smiling and talking with her companion."
+      loading="eager"
+    />
+  </Fragment>
 
-        <div class="hero-column-b">
-          <h1 class="h1 heading has-underline">
-            <span class="italic font-normal">Home Help Services</span> in Bradford
-          </h1>
+  <Fragment slot="heading">
+    <span class="font-italic font-normal">Home Help Services</span> in Bradford
+  </Fragment>
 
-          <div class="hero-content">
-            Struggling with daily tasks? Whether you're a senior who wants to
-            keep your independence or a family member worried about a loved one
-            at home, I get it. My elderly home help services provide the
-            practical support you need to stay independent at home—from light
-            housekeeping to meal prep and shopping. With over 30 years of
-            childminding experience and full DBS clearance, I bring a trusted,
-            personal approach to senior care—offering one-to-one support you can
-            rely on, without the worry of strangers coming and going.
-          </div>
+  <Fragment slot="hero-content">
+    Struggling with daily tasks? Whether you're a senior who wants to keep your
+    independence or a family member worried about a loved one at home, I get it.
+    My elderly home help services provide the practical support you need to stay
+    independent at home—from light housekeeping to meal prep and shopping. With
+    over 30 years of childminding experience and full DBS clearance, I bring a
+    trusted, personal approach to senior care—offering one-to-one support you
+    can rely on, without the worry of strangers coming and going.
+  </Fragment>
 
-          <Button variant="primary" class="hero-cta" is:link href="/contact/">
-            <span>Get In Touch</span>
-            <ArrowRight />
-          </Button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Fragment slot="services">
+    <ServiceSection
+      id="light-domestic-cleaning-services"
+      number="01"
+      heading="Light Domestic Cleaning Services"
+    >
+      <Fragment slot="description">
+        Keep your home fresh and comfortable with reliable cleaning support
+        tailored for seniors. I provide thorough elderly house cleaning
+        services, including
+        <span class="font-semibold">vacuuming, dusting, and mopping</span>
+        to maintain a tidy living space. You'll also get help with
+        <span class="font-semibold">
+          bed linen changes, clutter management, and kitchen and bathroom
+          sanitizing
+        </span>—all done with care and attention to your preferences. No
+        rotating strangers, just consistent, respectful assistance so your home
+        stays clean and welcoming.
+      </Fragment>
 
-  <div class="services">
-    <section id="light-domestic-cleaning-services" class="section service">
-      <div class="container service-container">
-        <div class="service-content">
-          <p class="service-number">01</p>
-          <h2 class="h2 service-heading">Light Domestic Cleaning Services</h2>
-          <p class="service-description">
-            Keep your home fresh and comfortable with reliable cleaning support
-            tailored for seniors. I provide thorough elderly house cleaning
-            services, including
-            <span class="semibold">vacuuming, dusting, and mopping</span>
-            to maintain a tidy living space. You'll also get help with
-            <span class="semibold">
-              bed linen changes, clutter management, and kitchen and bathroom
-              sanitizing
-            </span>—all done with care and attention to your preferences. No
-            rotating strangers, just consistent, respectful assistance so your
-            home stays clean and welcoming.
-          </p>
-        </div>
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/light-domestic-cleaning-services.jpg')}
+          alt="Light domestic cleaning services"
+        />
+      </Fragment>
+    </ServiceSection>
 
-        <div class="service-image-column">
-          <Image
-            src={import(
-              '../assets/images/light-domestic-cleaning-services.jpg'
-            )}
-            alt="Light domestic cleaning services"
-            class="service-image"
-          />
-        </div>
-      </div>
-    </section>
+    <ServiceSection
+      id="laundry-and-ironing-help"
+      number="02"
+      heading="Laundry & Ironing Help"
+    >
+      <Fragment slot="description">
+        Enjoy fresh, neatly cared-for clothes without the hassle. My laundry and
+        ironing services for seniors take care of everything—from
+        <span class="font-semibold">washing</span>
+        and
+        <span class="font-semibold">drying</span>
+        to
+        <span class="font-semibold">folding</span>
+        and
+        <span class="font-semibold">putting away your laundry</span>, all done
+        in the comfort of your own home. I provide thorough ironing so your
+        clothes look their best, while always respecting your preferences. No
+        heavy lifting or tedious chores—just reliable help to keep your wardrobe
+        tidy and organized. I do not take laundry off-site; all washing and
+        ironing is done in your home for your convenience and peace of mind.
+      </Fragment>
 
-    <section id="laundry-and-ironing-help" class="section service">
-      <div class="container service-container">
-        <div class="service-content">
-          <p class="service-number">02</p>
-          <h2 class="h2 service-heading">Laundry & Ironing Help</h2>
-          <p class="service-description">
-            Enjoy fresh, neatly cared-for clothes without the hassle. My laundry
-            and ironing services for seniors take care of everything—from
-            <span class="semibold">washing</span>
-            and
-            <span class="semibold">drying</span>
-            to
-            <span class="semibold">folding</span>
-            and
-            <span class="semibold">putting away your laundry</span>, all done in
-            the comfort of your own home. I provide thorough ironing so your
-            clothes look their best, while always respecting your preferences.
-            No heavy lifting or tedious chores—just reliable help to keep your
-            wardrobe tidy and organized. I do not take laundry off-site; all
-            washing and ironing is done in your home for your convenience and
-            peace of mind.
-          </p>
-        </div>
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/laundry-and-ironing-help.jpg')}
+          alt="laundry and ironing help"
+        />
+      </Fragment>
+    </ServiceSection>
 
-        <div class="service-image-column">
-          <Image
-            src={import('../assets/images/laundry-and-ironing-help.jpg')}
-            alt="laundry and ironing help"
-            class="service-image"
-          />
-        </div>
-      </div>
-    </section>
+    <ServiceSection
+      id="personalised-meal-preparation"
+      number="03"
+      heading="Personalised Meal Preparation"
+    >
+      <Fragment slot="description">
+        Enjoy <span class="font-semibold">
+          delicious, nutritious meals prepared
+        </span> just the way you like them—right in your
+        <span class="font-semibold">own kitchen</span>. My meal preparation
+        service for seniors focuses on creating dishes that suit your tastes,
+        dietary needs, and appetite. Whether it's adapting family recipes to be
+        easier to eat or ensuring meals are stored safely for later, I handle
+        everything with proper
+        <span class="font-semibold">food hygiene certification</span>
+        and care.
+      </Fragment>
 
-    <section id="personalised-meal-preparation" class="section service">
-      <div class="container service-container">
-        <div class="service-content">
-          <p class="service-number">03</p>
-          <h2 class="h2 service-heading">Personalised Meal Preparation</h2>
-          <p class="service-description">
-            Enjoy <span class="semibold">
-              delicious, nutritious meals prepared
-            </span> just the way you like them—right in your
-            <span class="semibold">own kitchen</span>. My meal preparation
-            service for seniors focuses on creating dishes that suit your
-            tastes, dietary needs, and appetite. Whether it's adapting family
-            recipes to be easier to eat or ensuring meals are stored safely for
-            later, I handle everything with proper
-            <span class="semibold">food hygiene certification</span>
-            and care.
-          </p>
-        </div>
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/personalised-meal-preparation.jpg')}
+          alt="Personalised meal preparation"
+        />
+      </Fragment>
+    </ServiceSection>
 
-        <div class="service-image-column">
-          <Image
-            src={import('../assets/images/personalised-meal-preparation.jpg')}
-            alt="Personalised meal preparation"
-            class="service-image"
-          />
-        </div>
-      </div>
-    </section>
+    <ServiceSection
+      id="grocery-shopping-and-errands"
+      number="04"
+      heading="Grocery Shopping & Errands"
+    >
+      <Fragment slot="description">
+        Let me handle your essential errands so you can skip the stress. My
+        grocery shopping and assistance service covers everything from
+        supermarket runs to
+        <span class="font-semibold">prescription pickups</span>
+        and
+        <span class="font-semibold">post office visits</span>. I'll carefully
+        select fresh produce, check expiry dates, and even carry heavy
+        bags—because no one should struggle with basic necessities. Need your
+        <span class="font-semibold">pension collected</span> or a
+        <span class="font-semibold">parcel posted</span>? Consider it done. With
+        DBS-checked reliability and local knowledge of Bradford shops, I make
+        sure your errands are completed efficiently, just the way you'd do them
+        yourself.
+      </Fragment>
 
-    <section id="grocery-shopping-and-errands" class="section service">
-      <div class="container service-container">
-        <div class="service-content">
-          <p class="service-number">04</p>
-          <h2 class="h2 service-heading">Grocery Shopping & Errands</h2>
-          <p class="service-description">
-            Let me handle your essential errands so you can skip the stress. My
-            grocery shopping and assistance service covers everything from
-            supermarket runs to
-            <span class="semibold">prescription pickups</span>
-            and
-            <span class="semibold">post office visits</span>. I'll carefully
-            select fresh produce, check expiry dates, and even carry heavy
-            bags—because no one should struggle with basic necessities. Need
-            your <span class="semibold">pension collected</span> or a
-            <span class="semibold">parcel posted</span>? Consider it done. With
-            DBS-checked reliability and local knowledge of Bradford shops, I
-            make sure your errands are completed efficiently, just the way you'd
-            do them yourself.
-          </p>
-        </div>
-
-        <div class="service-image-column">
-          <Image
-            src={import('../assets/images/grocery-shopping-and-errands.jpg')}
-            alt="Grocery shopping and errands"
-            class="service-image"
-          />
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <TestimonialsSection />
-  <ContactSection />
-  <Footer />
-</Layout>
-
-<style class="scss">
-  #hero {
-    background-color: var(--colour-primary);
-    padding-bottom: 0;
-  }
-
-  .hero-column-a {
-    display: none;
-  }
-
-  .topper {
-    font-style: italic;
-    color: rgba(var(--rgb-colour-text-base), 0.66);
-  }
-
-  .heading {
-    padding-bottom: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1.75rem;
-    font-size: 2.25rem;
-  }
-
-  .hero-cta {
-    margin-top: 1.5rem;
-  }
-
-  .service {
-    background-color: var(--colour-primary);
-  }
-
-  .service-container {
-    display: grid;
-    gap: 2rem;
-  }
-
-  .service-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .service-number {
-    font-size: 2rem;
-    font-weight: 600;
-    color: rgba(var(--rgb-colour-text-base), 0.3);
-  }
-
-  .service-heading {
-    font-family: var(--font-family-headings);
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .service-description {
-    line-height: 200%;
-    text-align: justify;
-  }
-
-  .service-image {
-    border-radius: 20px;
-    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
-    aspect-ratio: 16/9;
-    object-fit: cover;
-  }
-
-  .semibold {
-    font-weight: 600;
-  }
-
-  .italic {
-    font-style: italic;
-  }
-
-  .font-normal {
-    font-weight: normal;
-  }
-
-  @media only screen and (min-width: 38rem) {
-    #hero {
-      padding-bottom: var(--spacing-sections);
-    }
-
-    .hero-columns {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-    }
-
-    .hero-column-a {
-      display: block;
-      text-align: center;
-    }
-
-    .hero-image-wrapper {
-      max-width: 18rem;
-    }
-
-    .hero-image {
-      border-radius: 9999px;
-    }
-
-    .service-container {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .service:nth-child(2n) .service-content {
-      order: 2;
-    }
-
-    .service-content {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      grid-column: auto / span 3;
-    }
-
-    .service-image-column {
-      grid-column: auto / span 2;
-    }
-
-    .service-image {
-      aspect-ratio: 529/388;
-    }
-  }
-
-  @media only screen and (min-width: 42rem) {
-    .service-container {
-      gap: 3rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-content,
-    .service-image-column {
-      grid-column: auto;
-    }
-  }
-
-  @media only screen and (min-width: 68rem) {
-    .hero-columns {
-      gap: 5rem;
-    }
-
-    .service-container {
-      gap: 5rem;
-    }
-  }
-</style>
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/grocery-shopping-and-errands.jpg')}
+          alt="Grocery shopping and errands"
+        />
+      </Fragment>
+    </ServiceSection>
+  </Fragment>
+</ServicePage>

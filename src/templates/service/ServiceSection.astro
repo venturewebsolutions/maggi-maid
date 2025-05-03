@@ -1,0 +1,105 @@
+---
+interface Props {
+  id: string
+  number: string
+  heading: string
+}
+
+const { id, number, heading } = Astro.props
+---
+
+<section id={id} class="section service-section">
+  <div class="container service-container">
+    <div class="service-content">
+      <p class="service-number">{number}</p>
+      <h2 class="h2 service-heading">{heading}</h2>
+      <p class="service-description">
+        <slot name="description" />
+      </p>
+    </div>
+
+    <div class="service-image-wrapper">
+      <slot name="image" />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .service-section {
+    background-color: var(--colour-primary);
+  }
+
+  .service-container {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .service-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(var(--rgb-colour-text-base), 0.3);
+  }
+
+  .service-heading {
+    font-family: var(--font-family-headings);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .service-description {
+    line-height: 200%;
+    text-align: justify;
+  }
+
+  .service-image-wrapper :global(img) {
+    border-radius: 20px;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  @media only screen and (min-width: 38rem) {
+    .service-container {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      grid-column: auto / span 3;
+    }
+
+    .service-image-wrapper {
+      grid-column: auto / span 2;
+    }
+
+    .service-image-wrapper :global(img) {
+      aspect-ratio: 529/388;
+    }
+  }
+
+  @media only screen and (min-width: 42rem) {
+    .service-container {
+      gap: 3rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-content,
+    .service-image-wrapper {
+      grid-column: auto;
+    }
+  }
+
+  @media only screen and (min-width: 68rem) {
+    .service-container {
+      gap: 5rem;
+    }
+  }
+</style>
