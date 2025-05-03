@@ -1,6 +1,5 @@
 ---
 import ContactSection from '../../components/ContactSection.astro'
-import Footer from '../../components/Footer.astro'
 import TestimonialsSection from '../../components/TestimonialsSection.astro'
 import Layout from '../../layouts/Layout.astro'
 import Button from '../../components/Button.astro'
@@ -46,8 +45,7 @@ const { title } = Astro.props
   </div>
 
   <TestimonialsSection />
-  <ContactSection />
-  <Footer />
+  <ContactSection class="contact-section" />
 </Layout>
 
 <style class="scss">
@@ -76,11 +74,11 @@ const { title } = Astro.props
     margin-top: 1.5rem;
   }
 
-  @media only screen and (min-width: 38rem) {
-    #hero {
-      padding-bottom: var(--spacing-sections);
-    }
+  .contact-section {
+    padding-top: 0;
+  }
 
+  @media only screen and (min-width: 38rem) {
     .hero-columns {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -110,6 +108,10 @@ const { title } = Astro.props
   @media only screen and (min-width: 68rem) {
     .hero-columns {
       gap: 5rem;
+    }
+
+    .hero-column-b {
+      padding-top: 3rem;
     }
   }
 </style>

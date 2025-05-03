@@ -1,8 +1,13 @@
 ---
+import type { HTMLAttributes } from 'astro/types'
 import ContactForm from './ContactForm.astro'
+
+interface Props extends HTMLAttributes<'section'> {}
+
+const { class: _, ...props } = Astro.props
 ---
 
-<section id="contact" class="section">
+<section {...props} id="contact" class:list={[Astro.props.class, 'section']}>
   <div class="container">
     <p class="topper">Contact Me</p>
     <h2 class="h2 heading has-underline">Get In Touch!</h2>

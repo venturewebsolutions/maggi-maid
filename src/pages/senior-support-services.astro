@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets'
+import ServicePage from '../templates/service/ServicePage.astro'
+import ServiceSection from '../templates/service/ServiceSection.astro'
+---
+
+<ServicePage title="Senior Home Help Services">
+  <Fragment slot="hero-image">
+    <Image
+      src={import('../assets/images/hero-image-1.png')}
+      alt="A senior lady smiling and talking with her companion."
+      loading="eager"
+    />
+  </Fragment>
+
+  <Fragment slot="heading">
+    <span class="font-italic font-normal">Senior Support Services</span> in Bradford
+  </Fragment>
+
+  <Fragment slot="hero-content">
+    Missing appointments because driving doesn't feel safe anymore? Finding
+    phone calls or shopping trips overwhelming? You're not alone - and you don't
+    have to manage it all by yourself. Whether you're looking for support
+    yourself or worried about a loved one, my elderly support services remove
+    these frustrations with patient, one-to-one assistance—whether it's a
+    hospital visit, grocery run, or managing appointments.
+  </Fragment>
+
+  <Fragment slot="services">
+    <ServiceSection
+      id="transportation-to-appointments"
+      number="01"
+      heading="Transportation to Appointments"
+    >
+      <Fragment slot="description">
+        Never let mobility challenges keep you from important visits. My
+        reliable transport service for seniors ensures you get to
+        <span class="font-semibold">medical appointments</span>,
+        <span class="font-semibold">social outings</span>, and
+        <span class="font-semibold">family visits</span> safely and on time. Whether
+        it's a hospital check-up, or a trip to the hairdresser, I provide door-to-door
+        assistance with walking aids and a patient, unhurried approach. Punctuality
+        matters—so you'll never feel rushed or left waiting.
+      </Fragment>
+
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/light-domestic-cleaning-services.jpg')}
+          alt="Light domestic cleaning services"
+        />
+      </Fragment>
+    </ServiceSection>
+
+    <ServiceSection
+      id="personal-shopping-assistance"
+      number="02"
+      heading="Personal Shopping Assistance"
+    >
+      <Fragment slot="description">
+        My personal shopping service for seniors takes the stress out of
+        <span class="font-semibold"
+          >buying clothes, gifts, and household essentials</span
+        >. Whether you're looking for comfortable new slippers, a birthday
+        present for a grandchild, or fresh bedding for your home, I'll help you
+        choose exactly what you need.
+      </Fragment>
+
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/laundry-and-ironing-help.jpg')}
+          alt="laundry and ironing help"
+        />
+      </Fragment>
+    </ServiceSection>
+
+    <ServiceSection
+      id="telephone-appointment-support"
+      number="03"
+      heading="Telephone Appointment Support"
+    >
+      <Fragment slot="description">
+        My telephone assistance service for seniors takes the stress out of
+        <span class="font-semibold">managing appointments</span> and <span
+          class="font-semibold">essential calls</span
+        >. Whether you need to <span class="font-semibold">book a GP visit</span
+        >, <span class="font-semibold">arrange a repair</span>, or <span
+          class="font-semibold">understand medical letters</span
+        >, I'll handle the calls for you—clearly, patiently, and without the
+        frustration. No more missed appointments or unanswered questions—just
+        reliable support to keep everything on track.
+      </Fragment>
+
+      <Fragment slot="image">
+        <Image
+          src={import('../assets/images/personalised-meal-preparation.jpg')}
+          alt="Personalised meal preparation"
+        />
+      </Fragment>
+    </ServiceSection>
+  </Fragment>
+</ServicePage>
