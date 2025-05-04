@@ -5,43 +5,58 @@
     "featured": true
   },
   {
-    "question": "What if my loved one needs more advanced care?",
-    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
-    "featured": true
-  },
-  {
-    "question": "Are you DBS checked and insured?",
-    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "question": "What areas do you cover?",
+    "answer": "I serve Bradford and surrounding areas. Contact me to confirm availability in your location.",
     "featured": true
   },
   {
     "question": "What are your rates and minimum booking?",
-    "answer": "I assist with light housekeeping, meal prep, shopping, laundry, transportation to appointments, and companionship. Note: I don't provide personal care (e.g., bathing, dressing, or medication).",
+    "answer": "My rate is £15/hour, with a minimum 2-hour booking to ensure meaningful support.",
     "featured": true
   },
   {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "question": "What if my loved one needs more advanced care?",
+    "answer": "While I don't provide clinical or personal care, I'm happy to recommend trusted local services for additional needs.",
+    "featured": true
+  },
+  {
+    "question": "What are your working hours?",
+    "answer": "I provide services Monday to Friday from 9am to 6pm, and Saturdays from 10am to 2pm. This ensures I can give all my clients the dedicated attention they deserve while maintaining a sustainable schedule.",
     "featured": false
   },
   {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "question": "Why choose you over an agency?",
+    "answer": "With me, you get consistency, personal commitment, and no hidden fees—the kind of care I'd want for my own parents.",
     "featured": false
   },
   {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "question": "Are you DBS checked and insured?",
+    "answer": "Yes, I'm fully DBS-checked (formerly CRB) and trained in adult safeguarding. Your safety and peace of mind are my top priorities.",
+    "featured": true
+  },
+  {
+    "question": "Will I get the same carer every time?",
+    "answer": "Absolutely! Unlike agencies that rotate staff, you'll always see me—no strangers, just a familiar, trusted face.",
     "featured": false
   },
   {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "question": "How do you handle confidentiality?",
+    "answer": "Your privacy matters. All personal information and home details are kept strictly confidential—just as I'd expect for my own family.",
     "featured": false
   },
   {
-    "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-    "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa lectus, vehicula vitae dui quis, porttitor tempus nisl. Vivamus ac neque ligula. Cras ornare orci vitae felis efficitur efficitur.",
+    "question": "Can I change or cancel visits?",
+    "answer": "Yes! Just give 24 hours' notice for cancellations or rescheduling. I understand life can be unpredictable.",
+    "featured": false
+  },
+  {
+    "question": "How do I get started?",
+    "answer": "Contact me for a free consultation to discuss your needs. We'll create a flexible plan that works for you.",
+    "featured": false
+  },
+  {
+    "question": "Do you bring your own cleaning products?",
+    "answer": "Yes, I'm happy to provide basic cleaning supplies upon request—including detergents, cloths, and surface sprays. Please note: While I bring these essentials, I don't supply a vacuum cleaner.",
     "featured": false
   }
 ]
