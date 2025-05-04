@@ -6,13 +6,32 @@ import FAQs from '../components/Home/FAQs.astro'
 import Hero from '../components/Home/Hero.astro'
 import Services from '../components/Home/Services.astro'
 import TestimonialsSection from '../components/TestimonialsSection.astro'
+import { CONTACT_EMAIL, PHONE_NUMBER, SITE_TITLE } from '../consts'
 import Layout from '../layouts/Layout.astro'
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_TITLE,
+  url: import.meta.env.SITE,
+  email: CONTACT_EMAIL,
+  telephone: PHONE_NUMBER,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: CONTACT_EMAIL,
+    telephone: PHONE_NUMBER,
+  },
+})
 ---
 
 <Layout
   title="Maggi Maid | Senior Home Help & Support in Bradford"
   description="Maggi Maid provides trusted home help and companionship services for seniors in Bradford—supporting comfort, dignity, and independent living at home."
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={schema} />
+  </Fragment>
+
   <Hero />
   <Benefits />
   <Services />
