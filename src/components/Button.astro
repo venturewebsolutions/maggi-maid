@@ -15,7 +15,15 @@ type Props = (
 ) &
   BaseProps
 
-const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
+const {
+  variant,
+  'is:link': isLink = false,
+  type = 'button',
+  class: _,
+  ...props
+} = Astro.props
+
+const _type = type as 'button' | 'submit' | 'reset' | null | undefined
 ---
 
 {
@@ -31,7 +39,7 @@ const { variant, 'is:link': isLink = false, class: _, ...props } = Astro.props
     <button
       {...props}
       data-variant={variant}
-      type="button"
+      type={_type}
       class:list={[Astro.props.class, 'btn']}
     >
       <slot />
