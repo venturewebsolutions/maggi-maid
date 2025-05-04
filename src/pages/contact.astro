@@ -10,67 +10,72 @@ import Layout from '../layouts/Layout.astro'
 <Layout title="Contact Me">
   <div class="section">
     <div class="container">
-      <p class="topper">Contact Me</p>
-      <h1 class="h1 heading has-underline">Get In Touch!</h1>
-      <p class="justify">
-        Ready for reliable, compassionate care? Contact me today to arrange your
-        free consultation. Whether you call, text, or fill out the form below,
-        I'll respond within 24 hours to discuss how I can help you or your loved
-        one live more comfortably at home. Let's take the first step together.
-      </p>
+      <h1 class="topper">Contact Me</h1>
 
-      <div class="columns">
-        <div>
-          <ContactForm />
+      <section>
+        <h2 class="h2 heading has-underline">Get In Touch!</h2>
+
+        <p class="justify">
+          Ready for reliable, compassionate care? Contact me today to arrange
+          your free consultation. Whether you call, text, or fill out the form
+          below, I'll respond within 24 hours to discuss how I can help you or
+          your loved one live more comfortably at home. Let's take the first
+          step together.
+        </p>
+
+        <div class="columns">
+          <div>
+            <ContactForm />
+          </div>
+
+          <div class="info-column">
+            <div class="info-item">
+              <div class="info-icon-wrapper">
+                <ClockIcon width="30" height="30" class="info-icon" />
+              </div>
+
+              <div class="info-content">
+                <p class="semibold">Opening Hours</p>
+                <p>Monday - Friday: 9:00 to 18:00</p>
+                <p>Saturday: 10:00 to 14:00</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon-wrapper">
+                <LocationMarker class="info-icon" />
+              </div>
+
+              <div class="info-content">
+                <p class="semibold">Location</p>
+                <p>Bradford and Surrounding Areas</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon-wrapper">
+                <PhoneCallIcon width="24" height="24" class="info-icon" />
+              </div>
+
+              <div class="info-content">
+                <p class="semibold">Mobile</p>
+                <a href="+447312189652">07312 189 652</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon-wrapper">
+                <WhatsAppIcon width="30" height="30" class="info-icon" />
+              </div>
+
+              <div class="info-content">
+                <p class="semibold">WhatsApp</p>
+                <a href="https://wa.me/+447312189652">07312 189 652</a>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="info-column">
-          <div class="info-item">
-            <div class="info-icon-wrapper">
-              <ClockIcon width="30" height="30" class="info-icon" />
-            </div>
-
-            <div class="info-content">
-              <p class="semibold">Opening Hours</p>
-              <p>Monday - Friday: 9:00 to 18:00</p>
-              <p>Saturday: 10:00 to 14:00</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon-wrapper">
-              <LocationMarker class="info-icon" />
-            </div>
-
-            <div class="info-content">
-              <p class="semibold">Location</p>
-              <p>Bradford and Surrounding Areas</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon-wrapper">
-              <PhoneCallIcon width="24" height="24" class="info-icon" />
-            </div>
-
-            <div class="info-content">
-              <p class="semibold">Mobile</p>
-              <a href="+447312189652">07312 189 652</a>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon-wrapper">
-              <WhatsAppIcon width="30" height="30" class="info-icon" />
-            </div>
-
-            <div class="info-content">
-              <p class="semibold">WhatsApp</p>
-              <a href="https://wa.me/+447312189652">07312 189 652</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
@@ -82,6 +87,10 @@ import Layout from '../layouts/Layout.astro'
 
   .topper {
     font-style: italic;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-base);
+    line-height: var(--line-height-base);
     color: rgba(var(--rgb-colour-text-base), 0.66);
   }
 
