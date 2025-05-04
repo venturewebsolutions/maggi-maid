@@ -37,7 +37,7 @@ import { url } from '../../utils'
           <Image
             src={import('../../assets/images/hero-image-1.png')}
             alt="A senior lady smiling and talking with her companion."
-            widths={[166 * 1.75, 236, 320 * 2]}
+            widths={[Math.ceil(166 * 1.75), 236, 320 * 2]}
             sizes="(min-width: 76rem) 236px, (min-width: 48rem) 18vw, calc(50vw - 2.5rem - 2rem - 1.5rem)"
             loading="eager"
             class="image-1"
@@ -47,7 +47,7 @@ import { url } from '../../utils'
           <Image
             src={import('../../assets/images/hero-image-2.png')}
             alt="A senior lady enjoying Christmas celebrations."
-            widths={[166 * 1.75, 236, 320 * 2]}
+            widths={[Math.ceil(166 * 1.75), 236, 320 * 2]}
             sizes="(min-width: 76rem) 236px, (min-width: 48rem) 18vw, calc(50vw - 2.5rem - 2rem - 1.5rem)"
             loading="eager"
             class="image-2"
