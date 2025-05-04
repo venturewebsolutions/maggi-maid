@@ -27,7 +27,9 @@ const { class: _, ...props } = Astro.props
           <div>
             <Image
               src={import('../assets/images/testimonial-photo.jpg')}
-              alt="A senior lady dancing at a party."
+              alt="A senior dancing at a social event."
+              widths={[316 * 1.75, 415 * 2, 528, 528 * 2]}
+              sizes="(min-width: 32rem) calc(50vw - 1rem - 2rem - 2rem/2), calc(100vw - 2rem - 4rem)"
               class="review-photo"
             />
           </div>

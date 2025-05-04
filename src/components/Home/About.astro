@@ -32,11 +32,18 @@ import ArrowRight from '../ArrowRight.astro'
     <div class="column-b">
       <div class="image-wrapper has-dots-before has-dots-after">
         <Image
-          src={import('../../assets/images/hero-image-1.png')}
-          alt="A senior lady smiling and talking with her companion."
-          widths={[166, 344]}
+          src={import('../../assets/images/margaret-and-mum-m.jpg')}
+          alt="Margaret, owner of Maggi Maid, with her mum."
+          widths={[348 * 1.75, 671 * 2]}
           sizes="(max-width: 767px) 50vw, 25vw"
-          class="image"
+          class="image image-mobile"
+        />
+        <Image
+          src={import('../../assets/images/margaret-and-mum.jpg')}
+          alt="Margaret, owner of Maggi Maid, with her mum."
+          widths={[288, 288 * 2]}
+          sizes="(max-width: 767px) 50vw, 25vw"
+          class="image image-desktop"
         />
       </div>
     </div>
@@ -94,10 +101,15 @@ import ArrowRight from '../ArrowRight.astro'
   }
 
   .image {
-    aspect-ratio: 16/9;
-    object-fit: cover;
     box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .image-mobile {
     border-radius: 10px;
+  }
+
+  .image-desktop {
+    display: none;
   }
 
   @media only screen and (min-width: 22rem) {
@@ -125,8 +137,12 @@ import ArrowRight from '../ArrowRight.astro'
       max-width: 20rem;
     }
 
-    .image {
-      aspect-ratio: 377/584;
+    .image-mobile {
+      display: none;
+    }
+
+    .image-desktop {
+      display: block;
       border-radius: 9999px;
     }
   }
