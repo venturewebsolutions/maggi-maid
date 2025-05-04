@@ -6,7 +6,7 @@ import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
 import _ from 'lodash'
 
-interface Props {
+export interface Props {
   title: string
   description?: string
   og?: {
@@ -25,10 +25,10 @@ const { title, description = SITE_DESCRIPTION, og } = Astro.props
     <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content={`${title} - ${SITE_TITLE}`} />
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} - {SITE_TITLE}</title>
+    <title>{title}</title>
 
     <!-- Fonts -->
     <!-- <link
