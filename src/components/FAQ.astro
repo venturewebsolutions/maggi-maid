@@ -9,7 +9,13 @@ interface Props {
   'is:open': boolean
 }
 
-const { tag: Question, 'is:open': isOpen, ...props } = Astro.props
+const {
+  tag: Question,
+  question,
+  answer,
+  'is:open': isOpen,
+  ...props
+} = Astro.props
 ---
 
 <div {...props} class="faq" class:list={[{ open: Astro.props['is:open'] }]}>
