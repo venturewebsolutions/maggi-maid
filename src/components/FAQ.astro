@@ -19,10 +19,10 @@ const {
 ---
 
 <div {...props} class="faq" class:list={[{ open: Astro.props['is:open'] }]}>
-  <button class="faq-header">
+  <div class="faq-header" role="button" tabindex="0">
     <Question class="faq-question">{Astro.props.question}</Question>
     <CloseIcon variant="filled" class="faq-close-icon" />
-  </button>
+  </div>
   <p class="faq-body">{Astro.props.answer}</p>
 </div>
 
@@ -95,6 +95,21 @@ const {
 
     header?.addEventListener('click', () => {
       faq.classList.toggle('open')
+    })
+
+    header?.addEventListener('keydown', (e) => {
+      const event = e as KeyboardEvent
+      if (event.key === ' ') {
+        event.preventDefault()
+      }
+    })
+
+    header?.addEventListener('keyup', (e) => {
+      const event = e as KeyboardEvent
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        faq.classList.toggle('open')
+      }
     })
   }
 </script>
