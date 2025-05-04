@@ -10,8 +10,10 @@ import ServiceSection from '../templates/service/ServiceSection.astro'
 >
   <Fragment slot="hero-image">
     <Image
-      src={import('../assets/images/hero-image-1.png')}
-      alt="A senior lady smiling and talking with her companion."
+      src={import('../assets/images/senior-companionship-services.jpg')}
+      alt="A senior laughing at a dinner party"
+      widths={[288, 288 * 2]}
+      sizes="(min-width: 68rem) 288px, (min-width: 38rem) calc((100vw - 2rem - 3rem) * (1/3)), 0px"
       loading="eager"
     />
   </Fragment>
@@ -47,8 +49,10 @@ import ServiceSection from '../templates/service/ServiceSection.astro'
 
       <Fragment slot="image">
         <Image
-          src={import('../assets/images/light-domestic-cleaning-services.jpg')}
-          alt="Light domestic cleaning services"
+          src={import('../assets/images/home-sitting-service.jpg')}
+          alt="A helper reading a book with a senior"
+          widths={[380 * 1.75, 575 * 2, 536, 536 * 2]}
+          sizes="(min-width: 38rem) calc((100vw - 2rem - 2rem) * 0.4), calc(100vw - 2rem)"
         />
       </Fragment>
     </ServiceSection>
@@ -73,8 +77,10 @@ import ServiceSection from '../templates/service/ServiceSection.astro'
 
       <Fragment slot="image">
         <Image
-          src={import('../assets/images/laundry-and-ironing-help.jpg')}
-          alt="laundry and ironing help"
+          src={import('../assets/images/social-outings-and-trips.jpg')}
+          alt="A senior smiling and dancing"
+          widths={[380 * 1.75, 575 * 2, 536, 536 * 2]}
+          sizes="(min-width: 38rem) calc((100vw - 2rem - 2rem) * 0.4), calc(100vw - 2rem)"
         />
       </Fragment>
     </ServiceSection>
