@@ -1,0 +1,21 @@
+{
+  "name": "Maggi Maid",
+  "short_name": "Maggi",
+  "icons": [
+    {
+      "src": "/images/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#eceee9",
+  "background_color": "#eceee9",
+  "display": "standalone"
+}
