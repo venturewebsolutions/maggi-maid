@@ -9,22 +9,9 @@ import _ from 'lodash'
 export interface Props {
   title: string
   description: string
-  'og:image'?: string
-  'og:image:type'?: string
-  'og:image:width'?: string
-  'og:image:height'?: string
-  'og:image:alt'?: string
 }
 
-const {
-  title,
-  description,
-  'og:image': ogImage,
-  'og:image:type': ogImageType,
-  'og:image:width': ogImageWidth,
-  'og:image:height': ogImageHeight,
-  'og:image:alt': ogImageAlt,
-} = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
@@ -73,15 +60,28 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_TITLE} />
     <meta property="og:locale" content="en_GB" />
-    {ogImage && <meta property="og:image" content={ogImage} />}
-    {ogImageType && <meta property="og:image:type" content={ogImageType} />}
-    {ogImageWidth && <meta property="og:image:width" content={ogImageWidth} />}
-    {
-      ogImageHeight && (
-        <meta property="og:image:height" content={ogImageHeight} />
-      )
-    }
-    {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+    <meta
+      property="og:image"
+      content={url('/images/home-services-image-og.webp')}
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1500" />
+    <meta property="og:image:height" content="1500" />
+    <meta
+      property="og:image:alt"
+      content="A senior talking to her helper in the park"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={Astro.url.host} />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content={url('/images/home-services-image-og.webp')}
+    />
 
     <!-- Favicons & Manifests -->
     <link
