@@ -62,8 +62,7 @@ const services = [
                 ))}
               </ul>
               <a href={service.link} class="service-link">
-                <span>Read More</span>
-                <ArrowRight />
+                Read more about our {service.title}
               </a>
             </section>
           ))
@@ -139,13 +138,11 @@ const services = [
   }
 
   .service-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: block;
+    margin-top: 0.5rem;
     color: var(--colour-accent);
     font-weight: 600;
     transition: color 300ms ease;
-    margin-top: 0.5rem;
 
     &:hover {
       color: rgba(var(--rgb-colour-accent), 0.75);
