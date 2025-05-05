@@ -42,33 +42,29 @@ const {
     <link rel="sitemap" href={url('/sitemap-index.xml')} />
 
     <!-- Fonts -->
-    <!-- <link
-      rel="preload"
-      href={(await import('../assets/fonts/brown-sugar.woff2')).default}
-      as="font"
-      crossorigin
-    />
     <link
       rel="preload"
-      href={(await import('../assets/fonts/mulish-v13-latin-500.woff2'))
+      href={(await import('../assets/fonts/poppins-v22-latin-regular.woff2'))
         .default}
       as="font"
       crossorigin
     />
     <link
       rel="preload"
-      href={(await import('../assets/fonts/mulish-v13-latin-600.woff2'))
+      href={(await import('../assets/fonts/poppins-v22-latin-600.woff2'))
         .default}
       as="font"
       crossorigin
     />
     <link
       rel="preload"
-      href={(await import('../assets/fonts/mulish-v13-latin-700.woff2'))
-        .default}
+      href={(
+        await import('../assets/fonts/libre-caslon-text-v5-latin-700.woff2')
+      ).default}
       as="font"
       crossorigin
-    /> -->
+    />
+    <slot name="fonts-end" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />

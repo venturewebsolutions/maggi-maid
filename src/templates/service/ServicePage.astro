@@ -10,6 +10,19 @@ interface Props extends LayoutProps {}
 ---
 
 <Layout {...Astro.props}>
+  <Fragment slot="fonts-end">
+    <link
+      rel="preload"
+      href={(
+        await import(
+          '../../assets/fonts/libre-caslon-text-v5-latin-italic.woff2'
+        )
+      ).default}
+      as="font"
+      crossorigin
+    />
+  </Fragment>
+
   <div id="hero" class="section">
     <div class="container">
       <div class="hero-columns">
