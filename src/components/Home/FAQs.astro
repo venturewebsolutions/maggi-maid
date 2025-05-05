@@ -12,7 +12,7 @@ import faqs from '../../data/faqs.json'
 
     <FAQList faqs={faqs.filter((faq) => faq.featured)} tag="h3" />
 
-    <a href={url('/faqs/')} class="link">
+    <a href={url('/faqs/')} class="link primary-link">
       <span>Read All of Our FAQs</span>
       <ArrowRight />
     </a>
@@ -41,17 +41,6 @@ import faqs from '../../data/faqs.json'
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--colour-accent);
-    font-weight: 600;
-    transition: color 300ms ease;
     margin-top: 2rem;
-
-    &:hover {
-      color: rgba(var(--rgb-colour-accent), 0.75);
-    }
-
-    &:active {
-      color: rgba(var(--rgb-colour-accent), 0.5);
-    }
   }
 </style>

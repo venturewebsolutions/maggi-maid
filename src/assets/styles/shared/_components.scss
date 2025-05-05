@@ -13,6 +13,20 @@
     overflow: hidden;
   }
 
+  .primary-link {
+    color: var(--colour-link-primary);
+    font-weight: 600;
+    transition: color 300ms ease;
+
+    &:hover {
+      color: rgba(var(--rgb-colour-link-primary), 0.75);
+    }
+
+    &:active {
+      color: rgba(var(--rgb-colour-link-primary), 0.5);
+    }
+  }
+
   .has-underline {
     position: relative;
 

@@ -28,6 +28,8 @@
   --colour-accent-hover: hsl(9, 64%, 45%);
   --colour-accent-active: hsl(9, 64%, 40%);
   --colour-surface: #f8f9f7;
+  --colour-link-primary: #bc3f29;
+  --rgb-colour-link-primary: #{to-rgb(#bc3f29)};
 
   --spacing-sections: 3rem;
 }

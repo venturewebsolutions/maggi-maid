@@ -23,7 +23,7 @@ import ArrowRight from '../ArrowRight.astro'
         independent—because life should be lived fully at every age and under
         their own terms.
       </p>
-      <a href={url('/about/')} class="link">
+      <a href={url('/about/')} class="link primary-link">
         <span>Learn more about Maggi Maid</span>
         <ArrowRight />
       </a>
@@ -77,18 +77,7 @@ import ArrowRight from '../ArrowRight.astro'
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--colour-accent);
-    font-weight: 600;
-    transition: color 300ms ease;
     margin-top: 1.5rem;
-
-    &:hover {
-      color: rgba(var(--rgb-colour-accent), 0.75);
-    }
-
-    &:active {
-      color: rgba(var(--rgb-colour-accent), 0.5);
-    }
   }
 
   .image-wrapper {

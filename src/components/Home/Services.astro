@@ -61,7 +61,7 @@ const services = [
                   </li>
                 ))}
               </ul>
-              <a href={service.link} class="service-link">
+              <a href={service.link} class="service-link primary-link">
                 Read more about our {service.title}
               </a>
             </section>
@@ -140,17 +140,6 @@ const services = [
   .service-link {
     display: block;
     margin-top: 0.5rem;
-    color: var(--colour-accent);
-    font-weight: 600;
-    transition: color 300ms ease;
-
-    &:hover {
-      color: rgba(var(--rgb-colour-accent), 0.75);
-    }
-
-    &:active {
-      color: rgba(var(--rgb-colour-accent), 0.5);
-    }
   }
 
   .image-column {
