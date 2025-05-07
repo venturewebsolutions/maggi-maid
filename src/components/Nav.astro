@@ -242,9 +242,12 @@ import Button from './Button.astro'
 </style>
 
 <script>
+  import trimEnd from 'lodash/trimEnd'
+
   const hamburger = document.querySelector('.hamburger') as HTMLElement
   const mobileClose = document.querySelector('.mobile-close') as HTMLElement
   const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement
+  const mobileLinks = document.querySelectorAll('.mobile-link')
 
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.add('show')
@@ -255,4 +258,18 @@ import Button from './Button.astro'
     mobileMenu.classList.remove('show')
     document.body.classList.remove('no-scroll')
   })
+
+  for (const mobileLink of mobileLinks) {
+    mobileLink.addEventListener('click', (e) => {
+      const target = e.target as HTMLAnchorElement
+
+      const isSamePage =
+        trimEnd(target.pathname, '/') === trimEnd(window.location.pathname, '/')
+
+      if (target.hash && isSamePage) {
+        mobileMenu.classList.remove('show')
+        document.body.classList.remove('no-scroll')
+      }
+    })
+  }
 </script>
